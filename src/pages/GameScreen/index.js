@@ -41,22 +41,17 @@ export default class GameScreen extends Component {
             source={actualVertice.img} 
             resizeMode='stretch'
         >
-
             <View style={styles.container}>
-                {/* <View style={styles.description}>
-                    <Text>
+                <View style={styles.description}>
+                    <Text style={styles.text}>
                         {actualVertice.text}
                     </Text>
-                </View> */}
+                </View>
                 <View style={styles.containerImage}>
-                    {/* <Image
-                        style={styles.image}
-                        source={actualVertice.img}
-                    />         */}
                 </View>
                 <View style={styles.options}>
                     {actualVertice.arestas.length > 0 ? actualVertice.arestas.map((aresta, key) => {
-                            return(
+                        return(
                             <TouchableOpacity 
                                 key={key} 
                                 onPress={this.nextVertice.bind(this, aresta)} 
@@ -92,8 +87,7 @@ const styles = StyleSheet.create({
     },
     container:{
         height: '100%',
-        justifyContent: 'flex-end'
-        
+        justifyContent: 'space-between',
     },
     description:{
         alignItems: 'center',
@@ -101,7 +95,14 @@ const styles = StyleSheet.create({
         paddingBottom: 20,
         paddingLeft: 20,
         paddingRight: 20,
-    
+        color: '#fff',        
+    },
+    text:{
+        fontSize: 22,
+        color: '#fff',
+        textShadowColor: '#000',
+        textShadowOffset: {width: -1, height: -1},
+        textShadowRadius: 10
     },
     options:{
         alignItems: 'center',

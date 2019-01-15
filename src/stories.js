@@ -2,7 +2,8 @@ const stories = [
     {
         "id": 1,
         "title": "Bullying",
-        "description": "O Bullying é muito chato não é mesmo? Vamos explorar algumas situações e descobrir o que pode acontecer",
+        "descriptionP": "Os colegas de Pedrinho ficam empurrando suas costas durante a aula, está sendo muito chato ir para a escola, e pedrinho se sente muito triste",
+        "descriptionA": "Os colegas de Aninha ficam empurrando suas costas durante a aula, está sendo muito chato ir para a escola, e Aninha se sente muito triste",        
         "img": require("./imagens/bully.jpg"),
         "vertices":[
             {
@@ -141,7 +142,8 @@ const stories = [
     {
         "id": 2,
         "title": "Perda",
-        "description": "Perder um amigo, uma mãe, um pai, ou alguém próximo é sempre muito difícil, o que será que podemos fazer?",
+        "descriptionP": "Pedrinho perdeu seu cachorrinho de estimação, ele está muito triste, e está sempre chorando.",
+        "descriptionA": "Aninha perdeu seu cachorrinho de estimação, ele está muito triste, e está sempre chorando.",        
         "img": require("./imagens/death.png"),
         "vertices":[
             {
