@@ -42,11 +42,13 @@ export default class GameScreen extends Component {
             resizeMode='stretch'
         >
             <View style={styles.container}>
-                <View style={styles.description}>
-                    <Text style={styles.text}>
-                        {actualVertice.text}
-                    </Text>
-                </View>
+                <ScrollView style={styles.descriptionScroll}>
+                    <View style={styles.description}>
+                        <Text style={styles.text}>
+                            {actualVertice.text}
+                        </Text>
+                    </View>
+                </ScrollView>
                 <View style={styles.containerImage}>
                 </View>
                 <View style={styles.options}>
@@ -88,6 +90,12 @@ const styles = StyleSheet.create({
     container:{
         height: '100%',
         justifyContent: 'space-between',
+    },
+    descriptionScroll:{
+        maxHeight: 100,
+        marginTop: 20,
+        marginBottom: 20,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)'
     },
     description:{
         alignItems: 'center',
