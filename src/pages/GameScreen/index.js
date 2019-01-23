@@ -15,7 +15,12 @@ export default class GameScreen extends Component {
             .pipe(bindComponent(this))
             .subscribe(actualVertice => this.setState({actualVertice}));
 
-        
+        // storyService.wakeUp()
+        // .pipe(bindComponent(this))        
+        // .subscribe(speed => console.log(`You moved your phone with ${speed}`),
+        //     error => {
+        //         console.log("The sensor is not available");
+        //     });
     }
 
     finish = () => {
