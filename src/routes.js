@@ -10,7 +10,7 @@ const MainNavigator = createStackNavigator({
     Character: {screen: Character},
     StoriesScreen: {screen: StoriesScreen},
     Main: {screen: Main},
-    GameScreen: {screen: GameScreen}
+    GameScreen: {screen: GameScreen},
 }, {
     headerMode: 'none',
     navigationOptions: {
