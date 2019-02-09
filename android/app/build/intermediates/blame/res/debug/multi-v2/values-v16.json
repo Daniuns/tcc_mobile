@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "C:\\Users\\Giovanna\\Desktop\\tcc_mobile\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/3358689b750cefdf4fc6fc3207aadfb9/res/values-v16/values-v16.xml",
+                    "source": "C:\\Users\\Giovanna\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\61c3361861fb2fda93454bf9c7983685\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/values-v16/values-v16.xml",
+                    "source": "C:\\Users\\Giovanna\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\cb95053e0d2450ccebb5bb12da6d657d\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

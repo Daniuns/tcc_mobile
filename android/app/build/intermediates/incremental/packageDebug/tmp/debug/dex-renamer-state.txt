@@ -1,4 +1,4 @@
-#Wed Dec 12 22:10:13 BRST 2018
-base.0=/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/transforms/dexMerger/debug/0
+#Sun Feb 03 18:53:18 BRST 2019
+base.0=C\:\\Users\\Giovanna\\Desktop\\tcc_mobile\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
