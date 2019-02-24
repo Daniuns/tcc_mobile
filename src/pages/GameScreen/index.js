@@ -5,16 +5,21 @@ import { storyService } from '../../services/storyService';
 import { relatoryService } from '../../services/relatoryService';
 import { bindComponent } from '../../operators/bindComponent';
 import axios from 'axios';
+import { playerService } from '../../services/playerService';
 
 export default class GameScreen extends Component {
     constructor(){
         super();
-        this.state = {actualVertice: null}
+        this.state = {actualVertice: null, character: null}
     }
     componentDidMount(){
         storyService.getActualVertice()
             .pipe(bindComponent(this))
             .subscribe(actualVertice => this.setState({actualVertice}));
+
+        playerService.getCharacter()
+            .pipe(bindComponent(this))
+            .subscribe(character => this.setState({character}));
     }
 
     finish = async () => {
@@ -34,7 +39,7 @@ export default class GameScreen extends Component {
             return null;
         }
 
-        const {actualVertice} = this.state;
+        const {actualVertice, character} = this.state;
         return(
         <ImageBackground 
             style={styles.image}
@@ -45,7 +50,7 @@ export default class GameScreen extends Component {
                 <ScrollView style={styles.descriptionScroll}>
                     <View style={styles.description}>
                         <Text style={styles.text}>
-                            {actualVertice.text}
+                            {character == 'aninha' ? actualVertice.textA : actualVertice.textP}
                         </Text>
                     </View>
                 </ScrollView>
