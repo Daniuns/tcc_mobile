@@ -4,6 +4,7 @@ import {StyleSheet, Text, View, Image, ImageBackground, ScrollView, TouchableOpa
 import { storyService } from '../../services/storyService';
 import { relatoryService } from '../../services/relatoryService';
 import { bindComponent } from '../../operators/bindComponent';
+import axios from 'axios';
 
 export default class GameScreen extends Component {
     constructor(){
@@ -14,13 +15,12 @@ export default class GameScreen extends Component {
         storyService.getActualVertice()
             .pipe(bindComponent(this))
             .subscribe(actualVertice => this.setState({actualVertice}));
-
-        
     }
 
-    finish = () => {
-        relatoryService.sendRelatory();
-        storyService.nextVertice('A');
+    finish = async () => {
+        await relatoryService.sendRelatory();
+        storyService.nextVertice('A');  
+
         this.props.navigation.navigate('Main');
     }
 
