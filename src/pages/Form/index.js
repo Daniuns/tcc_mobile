@@ -12,14 +12,6 @@ export default class Form extends Component {
     this.state = {informationsPlayer: {}};
   }
 
-  componentDidMount(){
-    playerService.getInformationsPlayer()
-      .pipe(bindComponent(this))
-      .subscribe(data => {
-        console.log(data);
-      });
-  }
-
   changeName = (event) => {
     playerService.getInformationsPlayer()
       .pipe(take(1), bindComponent(this))
