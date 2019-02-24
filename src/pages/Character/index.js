@@ -19,7 +19,7 @@ export default class Character extends Component {
 
           <View style={styles.characters}>
             <View style={styles.btnCharacter}>
-              <TouchableOpacity onPress={this.navigate.bind(this, 'Pedrinho')}>
+              <TouchableOpacity onPress={this.navigate.bind(this, 'pedrinho')}>
                 <Text style={styles.characterName}>Pedrinho</Text>
                 <Image style={styles.img} source={require('../../imagens/pedrinho.jpg')}/>
                 <Text style={styles.descriptionCharacter}>
@@ -31,7 +31,7 @@ export default class Character extends Component {
 
             </View>
             <View style={styles.btnCharacter}>
-              <TouchableOpacity onPress={this.navigate.bind(this, 'Aninha')}>
+              <TouchableOpacity onPress={this.navigate.bind(this, 'aninha')}>
                   <Text style={styles.characterName}>Aninha</Text>
                   <Image style={styles.img} source={require('../../imagens/aninha.jpg')}/>
                   <Text>
