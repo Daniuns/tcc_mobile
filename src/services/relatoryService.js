@@ -1,7 +1,7 @@
 import rxjs, { BehaviorSubject } from "rxjs";
 import { take, combineLatest } from 'rxjs/operators';
 import { bindComponent } from "../operators/bindComponent";
-import axios from 'axios';
+// import axios from 'axios';
 import { playerService } from "./playerService";
 
 export class RelatoryService {
