@@ -44,10 +44,32 @@ export default class Main extends Component {
                         
                 <View style={styles.options}>
                     <TouchableOpacity onPress={this.init} style={styles.btnOption}>
-                        <Text style={styles.textOption}>Iniciar</Text>
+                      <Text style={[styles.text, {
+                        fontFamily: "KidsZone",
+                        fontSize: 28,
+                        color: '#FFFF00',
+                        letterSpacing: 2,
+                        textShadowColor: '#000',
+                        textShadowOffset: {width: -1, height: -1},
+                        textShadowRadius: 10
+                      }]}
+                      >
+                        Iniciar
+                      </Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={this.navigate} style={styles.btnOption}>
-                        <Text style={styles.textOption}>Histórias</Text>
+                    <Text style={[styles.text, {
+                        fontFamily: "KidsZone",
+                        fontSize: 28,
+                        letterSpacing: 2,
+                        color: '#FFFF00',
+                        textShadowColor: '#000',
+                        textShadowOffset: {width: -1, height: -1},
+                        textShadowRadius: 10
+                      }]}
+                      >
+                        Histórias
+                      </Text>
                     </TouchableOpacity>
                 </View>
             </View>

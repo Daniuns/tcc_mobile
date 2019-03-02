@@ -75,16 +75,39 @@ export default class Form extends Component {
     return (
       <View style={styles.container}>
 
-        <Text style={styles.formTitle}>Fomulário do Jogador</Text>
+        <Text  style={[styles.text, {
+            fontFamily: "KidsZone",
+            fontSize: 28,
+            letterSpacing: 2,
+            marginBottom: 40,
+            color: '#FFFF00',
+            textShadowColor: '#000',
+            textShadowOffset: {width: -1, height: -1},
+            textShadowRadius: 5  
+          }]}>
+            Sobre Você!
+          </Text>
       
         <View style={styles.formContent}>
           <TextInput
-            style={styles.textInput}
+            style={[styles.text, {
+              fontFamily: "AmaticSC-Bold",
+              fontSize: 18,
+              letterSpacing: 2,
+              borderRadius: 5,
+              borderWidth: 1,
+            }]}
             placeholder={'Nome'}
             onChangeText={this.changeName}
           />
 
-          <View style={styles.textInput}>
+          <View style={[styles.text, {
+              fontFamily: "AmaticSC-Bold",
+              fontSize: 18,
+              letterSpacing: 2,
+              borderRadius: 5,
+              borderWidth: 1,
+            }]}>
             <Picker
               selectedValue={informationsPlayer.gender || ''}
               style={styles.selectInput}
@@ -97,19 +120,50 @@ export default class Form extends Component {
           
           <TextInput
             keyboardType={'numeric'}
-            style={styles.textInput}
+            style={[styles.text, {
+              fontFamily: "AmaticSC-Bold",
+              fontSize: 18,
+              letterSpacing: 2,
+              borderRadius: 5,
+              borderWidth: 1,
+            }]}
             placeholder={'Idade'}
             onChangeText={this.changeAge}
+            
           />
 
           <TextInput
-            style={styles.textInput}
+            style={[styles.text, {
+              fontFamily: "AmaticSC-Bold",
+              fontSize: 18,
+              letterSpacing: 2,
+              borderRadius: 5,
+              borderWidth: 1,
+            }]}
             placeholder={'Responsável'}
             onChangeText={this.changeResponsible}
           />
-        <Text style={styles.errMsg}>{errMsg}</Text>
+        <Text style={[styles.text, {
+            fontFamily: "AmaticSC-Bold",
+            fontSize: 18,
+            letterSpacing: 2,
+            color: 'red' 
+          }]}
+        >
+          {errMsg}
+        </Text>
         <TouchableOpacity onPress={this.navigate} style={styles.btnContinue}>
-          <Text style={styles.btnContinueText}>Próximo</Text>
+          <Text style={[styles.text, {
+              fontFamily: "KidsZone",
+              fontSize: 18,
+              letterSpacing: 2,
+              color: '#FFF',
+              textShadowColor: '#000',
+              textShadowOffset: {width: -1, height: -1},
+              textShadowRadius: 5 
+            }]}>
+            Próximo
+          </Text>
         </TouchableOpacity>
         </View>
       </View>
@@ -135,10 +189,6 @@ const styles = StyleSheet.create({
     height: 350,
     justifyContent: 'space-between',
   },
-  textInput:{
-    borderRadius: 5,
-    borderWidth: 1,
-  },
   selectInput:{
     borderRadius: 5,
     borderWidth: 1,
@@ -161,5 +211,5 @@ const styles = StyleSheet.create({
   errMsg:{
     fontSize: 12,
     color: 'red'
-  }
+  },
 });

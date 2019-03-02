@@ -27,16 +27,45 @@ export default class StoriesScreen extends Component {
     const {char} = this.state;
     return (
       <View style={styles.container}>
-         <Text style={styles.title}>Selecione uma História</Text>
+         <Text style={[styles.text, {
+          fontFamily: "KidsZone",
+          fontSize: 28,
+          letterSpacing: 2,
+          textAlign: 'center',
+          color: '#FFFF00',
+          textShadowColor: '#000',
+          textShadowOffset: {width: -1, height: -1},
+          textShadowRadius: 10
+        }]}
+        >
+          Selecione uma História
+        </Text>
          <ScrollView style={styles.scrollView} >
          <View style={styles.characters}>
         {stories.map((story, key) => {
             return(
               <View style={styles.btnCharacter} key={key} onPress={this.navigate.bind(this, story)}>
                 <TouchableOpacity onPress={this.navigate.bind(this, story)}>
-                  <Text style={styles.characterName}>{story.title}</Text>
+                  <Text style={[styles.text, {
+                    fontFamily: "KidsZone",
+                    fontSize: 28,
+                    letterSpacing: 2,
+                    textAlign: 'center',
+                    color: '#234f92',
+                    textShadowColor: '#000',
+                    textShadowOffset: {width: -1, height: -1},
+                    textShadowRadius: 5
+                  }]}
+                  >
+                    {story.title}
+                  </Text>
                   <Image style={styles.img} source={story.img}/>
-                  <Text style={styles.descriptionCharacter}>
+                  <Text style={[styles.text, {
+                    fontFamily: "AmaticSC-Bold",
+                    fontSize: 18,
+                    letterSpacing: 2,
+                  }]}
+                  >
                       {char == 'Pedrinho'? story.descriptionP : story.descriptionA }
                   </Text>
                 </TouchableOpacity>
@@ -74,8 +103,8 @@ const styles = StyleSheet.create({
   btnCharacter:{
     borderRadius: 5,
     borderWidth: 2,
-    width: 220,
-    maxHeight: 310,
+    width: 250,
+    maxHeight: 350,
     backgroundColor: '#fff',
     borderColor: '#ccc',
     marginTop: 20,
