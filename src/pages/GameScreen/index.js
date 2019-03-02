@@ -48,9 +48,15 @@ export default class GameScreen extends Component {
             <View style={styles.container}>
                 <ScrollView style={styles.descriptionScroll}>
                     <View style={styles.description}>
-                        <Text style={styles.text}>
-                            {character == 'aninha' ? actualVertice.textA : actualVertice.textP}
-                        </Text>
+                    <Text style={[styles.text, {
+                        fontFamily: "KidsZone",
+                        fontSize: 20,
+                        color: '#FFFF00',
+                        letterSpacing: 2,
+                    }]}
+                    >
+                        {character == 'aninha' ? actualVertice.textA : actualVertice.textP}
+                    </Text>
                     </View>
                 </ScrollView>
                 <View style={styles.containerImage}>
@@ -63,7 +69,18 @@ export default class GameScreen extends Component {
                                 onPress={this.nextVertice.bind(this, aresta)} 
                                 style={styles.btnOption}
                             >
-                                <Text style={styles.textOption}>
+                                <Text style={[styles.text, {
+                                    fontFamily: "KidsZone",
+                                    fontSize: 18,
+                                    color: '#FFF',
+                                    letterSpacing: 2,
+                                    textAlign: 'center',
+                                    paddingLeft: 5,
+                                    paddingRight: 5,
+                                    paddingTop: 5,
+                                    paddingBottom: 5
+                                }]}
+                                >
                                     {aresta.text}
                                 </Text>
                             </TouchableOpacity>
@@ -73,7 +90,19 @@ export default class GameScreen extends Component {
                             onPress={this.finish} 
                             style={styles.btnOption}
                         >
-                            <Text style={styles.textOption}>Inicio</Text>
+                            <Text style={[styles.text, {
+                                    fontFamily: "KidsZone",
+                                    fontSize: 18,
+                                    color: '#FFF',
+                                    letterSpacing: 2,
+                                    textAlign: 'center',
+                                    paddingLeft: 5,
+                                    paddingRight: 5,
+                                    paddingTop: 5,
+                                    paddingBottom: 5
+                            }]}
+                            >
+                                Inicio</Text>
                         </TouchableOpacity> 
                     }
                 </View>

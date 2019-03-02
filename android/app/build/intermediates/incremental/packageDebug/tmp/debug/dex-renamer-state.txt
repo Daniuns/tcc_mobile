@@ -1,4 +1,4 @@
-#Sat Feb 09 15:17:58 BRST 2019
+#Fri Mar 01 19:17:21 BRT 2019
 base.0=/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -13,16 +13,43 @@ export default class Character extends Component {
   render() {
     return (
       <View style={styles.container} >
-        <Text style={styles.title}>Selecione um personagem</Text>
+        <Text style={[styles.text, {
+          fontFamily: "KidsZone",
+          fontSize: 28,
+          letterSpacing: 2,
+          color: '#FFFF00',
+          textShadowColor: '#000',
+          textShadowOffset: {width: -1, height: -1},
+          textShadowRadius: 5,
+          textAlign: 'center'
+        }]}>
+          Selecione um personagem
+        </Text>
     
         <ScrollView style={styles.scrollView} >
 
           <View style={styles.characters}>
             <View style={styles.btnCharacter}>
               <TouchableOpacity onPress={this.navigate.bind(this, 'pedrinho')}>
-                <Text style={styles.characterName}>Pedrinho</Text>
+                <Text style={[styles.text, {
+                  fontFamily: "KidsZone",
+                  fontSize: 28,
+                  letterSpacing: 2,
+                  textAlign: 'center',
+                  paddingBottom: 3,
+                  color: '#214070',
+                  textShadowColor: '#000',
+                  textShadowOffset: {width: -1, height: -1},
+                  textShadowRadius: 5
+                }]}>
+                    Pedrinho
+                </Text>
                 <Image style={styles.img} source={require('../../imagens/pedrinho.jpg')}/>
-                <Text style={styles.descriptionCharacter}>
+                <Text style={[styles.text, {
+                  fontFamily: "AmaticSC-Bold",
+                  fontSize: 18,
+                  letterSpacing: 2,
+                }]}>
                     Pedrinho é uma criança muito legal, ele tem 9 anos e adora brincar.
                     Pedrinho não gosta muito da escola, e recentemente perdeu seu cachorrinho de estimação.
                     Estão sendo dias ruins para Pedrinho. 
@@ -32,9 +59,26 @@ export default class Character extends Component {
             </View>
             <View style={styles.btnCharacter}>
               <TouchableOpacity onPress={this.navigate.bind(this, 'aninha')}>
-                  <Text style={styles.characterName}>Aninha</Text>
+                  <Text style={[styles.text, {
+                      fontFamily: "KidsZone",
+                      fontSize: 28,
+                      letterSpacing: 2,
+                      textAlign: 'center',
+                      color: '#f483b6',
+                      paddingBottom: 3,
+                      textShadowColor: '#000',
+                      textShadowOffset: {width: -1, height: -1},
+                      textShadowRadius: 5
+                    }]}>
+                    Aninha
+                  </Text>
                   <Image style={styles.img} source={require('../../imagens/aninha.jpg')}/>
-                  <Text>
+                  <Text style={[styles.text, {
+                    fontFamily: "AmaticSC-Bold",
+                    fontSize: 18,
+                    letterSpacing: 2,
+                    marginBottom: 40,    
+                  }]}>
                     Aninha é uma criança muito divertida, ela tem 9 anos e adora brincar.
                     Aninha não gosta muito da escola, e recentemente perdeu seu cachorrinho de estimação.
                     Estão sendo dias ruins para Aninha.
@@ -72,8 +116,8 @@ const styles = StyleSheet.create({
   btnCharacter:{
     borderRadius: 5,
     borderWidth: 2,
-    width: 220,
-    maxHeight: 310,
+    width: 250,
+    maxHeight: 400,
     backgroundColor: '#fff',
     borderColor: '#ccc',
     marginTop: 20,
