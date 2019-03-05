@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import {StyleSheet, Text, View, Image, ImageBackground, ScrollView, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, Image, ImageBackground, ScrollView, TouchableOpacity, Vibration} from 'react-native';
 import { storyService } from '../../services/storyService';
 import { relatoryService } from '../../services/relatoryService';
 import { bindComponent } from '../../operators/bindComponent';
@@ -14,7 +14,9 @@ export default class GameScreen extends Component {
     componentDidMount(){
         storyService.getActualVertice()
             .pipe(bindComponent(this))
-            .subscribe(actualVertice => this.setState({actualVertice}));
+            .subscribe(actualVertice => {
+                this.setState({actualVertice});
+            });
 
         playerService.getCharacter()
             .pipe(bindComponent(this))
@@ -29,6 +31,7 @@ export default class GameScreen extends Component {
     }
 
     nextVertice = (aresta) => {
+        Vibration.vibrate(300);
         const data = {situation: this.state.actualVertice.text, answer: aresta.text}
         storyService.nextVertice(aresta.destiny);
         relatoryService.setRelatory(data);

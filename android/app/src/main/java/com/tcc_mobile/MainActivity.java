@@ -1,6 +1,7 @@
 package com.tcc_mobile;
 
 import com.facebook.react.ReactActivity;
+import com.sensormanager.SensorManagerPackage;
 
 public class MainActivity extends ReactActivity {
 
