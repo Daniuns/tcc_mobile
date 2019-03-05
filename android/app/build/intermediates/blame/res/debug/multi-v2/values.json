@@ -101,11 +101,11 @@
                 {
                     "source": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/res/values/strings.xml",
                     "from": {
-                        "startLines": "1",
+                        "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "16",
+                        "startOffsets": "17",
                         "endColumns": "47",
-                        "endOffsets": "59"
+                        "endOffsets": "60"
                     },
                     "to": {
                         "startLines": "555",

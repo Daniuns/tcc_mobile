@@ -6,11 +6,11 @@ import Character from './pages/Character/index';
 import StoriesScreen from './pages/StoriesScreen/index';
 
 const MainNavigator = createStackNavigator({
+  GameScreen: {screen: GameScreen},
     Form: { screen: Form },
     Character: {screen: Character},
     StoriesScreen: {screen: StoriesScreen},
     Main: {screen: Main},
-    GameScreen: {screen: GameScreen},
 }, {
     headerMode: 'none',
     navigationOptions: {
