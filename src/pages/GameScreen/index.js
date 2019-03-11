@@ -5,17 +5,32 @@ import { storyService } from '../../services/storyService';
 import { relatoryService } from '../../services/relatoryService';
 import { bindComponent } from '../../operators/bindComponent';
 import { playerService } from '../../services/playerService';
+import Sound from 'react-native-sound';
+import { audioService } from '../../services/audioService';
+
+Sound.setCategory('Playback');
 
 export default class GameScreen extends Component {
     constructor(){
         super();
-        this.state = {actualVertice: null, character: null}
+        this.state = {actualVertice: undefined, character: undefined, timeInit: undefined}
     }
     componentDidMount(){
+        
         storyService.getActualVertice()
             .pipe(bindComponent(this))
             .subscribe(actualVertice => {
+                const time = new Date().getTime(); 
+                this.setState({timeInit: time});
                 this.setState({actualVertice});
+
+                
+                if(actualVertice.audios.length > 0){
+                    audioService.setAudio(actualVertice.audios);
+                    audioService.playAudio()
+                }
+
+
             });
 
         playerService.getCharacter()
@@ -24,15 +39,28 @@ export default class GameScreen extends Component {
     }
 
     finish = async () => {
-        await relatoryService.sendRelatory();
-        storyService.nextVertice('A');  
+        
+        try{
+            await relatoryService.sendRelatory();
+            audioService.stopActualAudios();
+            this.props.navigation.navigate('Main');
 
-        this.props.navigation.navigate('Main');
+        }catch(err){
+            console.log(err);
+        }
+
     }
 
     nextVertice = (aresta) => {
+        audioService.stopActualAudios();
+        const {actualVertice, character, timeInit} = this.state;
+        
         Vibration.vibrate(300);
-        const data = {situation: this.state.actualVertice.text, answer: aresta.text}
+        const data = {
+            situation: character == 'aninha' ? actualVertice.textA : actualVertice.textP
+            , answer: aresta.text
+            , time: Math.trunc((new Date().getTime() - timeInit)/1000)
+        }
         storyService.nextVertice(aresta.destiny);
         relatoryService.setRelatory(data);
     }
@@ -49,19 +77,25 @@ export default class GameScreen extends Component {
             resizeMode='stretch'
         >
             <View style={styles.container}>
-                <ScrollView style={styles.descriptionScroll}>
+            <View style={styles.descriptionScroll}>
+                <ScrollView style={styles.textContent}>
                     <View style={styles.description}>
-                    <Text style={[styles.text, {
-                        fontFamily: "KidsZone",
-                        fontSize: 20,
-                        color: '#FFFF00',
-                        letterSpacing: 2,
-                    }]}
-                    >
-                        {character == 'aninha' ? actualVertice.textA : actualVertice.textP}
-                    </Text>
+                            <Text style={[styles.text, {
+                                fontFamily: "KidsZone",
+                                fontSize: 20,
+                                color: '#FFFF00',
+                                letterSpacing: 2,
+                            }]}
+                            >
+                                {character == 'aninha' ? actualVertice.textA : actualVertice.textP}
+                            </Text>
                     </View>
                 </ScrollView>
+                <View style={styles.triangleDiv}>
+                    <View style={styles.triangleTop} />
+                    <View style={styles.triangleBot}/>
+                </View>
+            </View>
                 <View style={styles.containerImage}>
                 </View>
                 <View style={styles.options}>
@@ -128,18 +162,24 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     descriptionScroll:{
-        maxHeight: 100,
+        flexDirection: 'row',
+        maxHeight: 90,
         marginTop: 20,
         marginBottom: 20,
+        paddingRight: 5,
         backgroundColor: 'rgba(0, 0, 0, 0.5)'
     },
+    textContent:{
+        // maxHeight: 90,
+        // backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    },
     description:{
-        alignItems: 'center',
-        paddingTop: 20,
-        paddingBottom: 20,
+        paddingTop: 5,
+        paddingBottom: 5,
         paddingLeft: 20,
         paddingRight: 20,
-        color: '#fff',        
+        color: '#fff', 
+        width: '95%'       
     },
     text:{
         fontSize: 22,
@@ -178,4 +218,33 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
       },
+
+      triangleTop:{
+        width: 0,
+        height: 0,
+        borderWidth: 13,
+        borderTopColor: 'transparent',
+        borderRightColor: 'transparent',
+        borderBottomColor: '#FFF',
+        borderLeftColor: 'transparent',
+        marginBottom: 5,
+        shadowColor: 'red',
+      },
+
+      triangleBot:{
+        width: 0,
+        height: 0,
+        borderWidth: 13,
+        borderTopColor: '#FFF',
+        borderRightColor: 'transparent',
+        borderBottomColor: 'transparent',
+        borderLeftColor: 'transparent'
+        // borderColor: '#FFF transparent transparent transparent'
+      },
+
+      triangleDiv: {
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        flexDirection: 'column'
+      }
     });

@@ -17,6 +17,8 @@ export class RelatoryService {
             take(1), 
             bindComponent(this)
         ).subscribe(relatory => {
+            console.log('verificando',data);
+
             this.relatory$.next([...relatory, data ])
         })
     }
@@ -30,14 +32,15 @@ export class RelatoryService {
         ).subscribe(async ([relatory, player]) => {
             const response = await axios({
                 method: 'post',
-                url: 'http://192.168.100.19:3000/email/send',
+                // url: 'http://192.168.25.216:3000/email/send',
+                url: 'https://tcc-mobile-api.herokuapp.com/email/send',
                 data: { 
                     relatory, 
                     player
                  }
                 });
-                console.log('resp', response);
             this.relatory$.next([]);
+            console.log('resp', response);
         })
     }
 }

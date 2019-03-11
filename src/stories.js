@@ -8,8 +8,9 @@ const stories = [
         "vertices":[
             {
                 "value": "A",
-                "textP": "A  mãe de Pedrinho foi acordar-lo. O que ele deve fazer?",
-                "textA": "A  mãe de Aninha foi acordar-la. O que ela deve fazer?",
+                "textP": "É um dia chuvoso. A  mãe de Pedrinho foi acordar-lo. O que ele deve fazer?",
+                "textA": "É um dia chuvoso. A  mãe de Aninha foi acordar-la. O que ela deve fazer?",
+                "audios": ["rain.mp3", "thunder.mp3"],
                 "img": require("./imagens/bully.jpg"),
                 "arestas": [
                     {
@@ -30,6 +31,7 @@ const stories = [
                 "value": "B",
                 "textP": "Pedrinho nem tomou café da manhã, ir para escola deixa ele sem fome. Ele entrou no carro com sua mãe, e sua mãe lhe perguntou o que estava acontecendo.",
                 "textA": "Aninha nem tomou café da manhã, ir para escola deixa ela sem fome. Ela entrou no carro com sua mãe, e sua mãe lhe perguntou o que estava acontecendo.",
+                "audios": ["rain.mp3"],
                 "img": require("./imagens/bully.jpg"),
                 "arestas":[
                     {
@@ -46,6 +48,7 @@ const stories = [
                 "value": "C",
                 "textP":"A mãe de Pedrinho, tentou medir a temperatura dele com a mão, e percebeu que ele não estava quente. Após isso ela perguntou o que ele tem",
                 "textA":"A mãe de Aninha, tentou medir a temperatura dela com a mão, e percebeu que ela não estava quente. Após isso ela perguntou o que Aninha tem",
+                "audios": ["rain.mp3"],
                 "img": require("./imagens/bully.jpg"),
                 "arestas":[
                     {
@@ -63,6 +66,7 @@ const stories = [
                 "img": require("./imagens/bully.jpg"),
                 "textP": "A mãe de Pedrinho ficou um pouco impressionada com o que estava acontecendo, ela o abraçou e disse que iria até a escola conversar com a professora, as coisas finalmente vão começar a melhorar.",
                 "textA": "A mãe de Aninha ficou um pouco impressionada com o que estava acontecendo, ela a abraçou e disse que iria até a escola conversar com a professora, as coisas finalmente vão começar a melhorar.",
+                "audios": ["rain.mp3"],
                 "arestas": []
             },
             {
@@ -70,6 +74,7 @@ const stories = [
                 "img": require("./imagens/bully.jpg"),
                 "textP": " A mãe de Pedrinho ficou um pouco impressionada com o que estava acontecendo, ela o abraçou e disse que iria até a escola conversar com a professora, as coisas finalmente vão começar a melhorar.",
                 "textA": " A mãe de Aninha ficou um pouco impressionada com o que estava acontecendo, ela a abraçou e disse que iria até a escola conversar com a professora, as coisas finalmente vão começar a melhorar.",
+                "audios": ["rain.mp3"],
                 "arestas": []
             },
             {
@@ -77,6 +82,7 @@ const stories = [
                 "img": require("./imagens/bully.jpg"),
                 "textP": "Agora ele está na sala de aula, a professora está explicando a matéria, mas sempre que a professora vira para a lousa, os colegas  de classe de Pedrinho empurram as costas dele e dão risada, para Pedrinho isso é muito irritante.",
                 "textA": "Agora ela está na sala de aula, a professora está explicando a matéria, mas sempre que a professora vira para a lousa, os colegas  de classe de Aninha empurram as costas dele e dão risada, para Aninha isso é muito irritante.",
+                "audios": ["rain.mp3"],
                 "arestas": [
                     {
                         "destiny": "H",
@@ -97,6 +103,7 @@ const stories = [
                 "img": require("./imagens/bully.jpg"),
                 "textP": "A mãe de Pedrinho disse que ele não precisa ir para escola. Mas ele sabe que não pode continuar mentindo todos os dias. E percebeu que nada mudou, e ele só se livrou por hoje. Ele sabe que amanhã as crianças continuarão irritando ele.",
                 "textA": "A mãe de Aninha disse que ela não precisa ir para escola. Mas ela sabe que não pode continuar mentindo todos os dias. E percebeu que nada mudou, e ela só se livrou por hoje. Ela sabe que amanhã as crianças continuarão irritando ela.",
+                "audios": ["rain.mp3"],
                 "arestas": []
             },
             {
@@ -104,6 +111,7 @@ const stories = [
                 "img": require("./imagens/bully.jpg"),
                 "textP": "Ele contou para a professora no final da aula o que estava acontecendo, ela disse que vai prestar mais atenção. E que vai ajudar ele a encarar isso. Pedrinho, agora, se sente melhor em saber que irão ajudar ele com isso.",
                 "textA": "Ela contou para a professora no final da aula o que estava acontecendo, ela disse que vai prestar mais atenção. E que vai ajudar ela a encarar isso. Aninha, agora, se sente melhor em saber que irão ajudar ela com isso.",
+                "audios": ["rain.mp3"],
                 "arestas": []
             },
             {
@@ -111,6 +119,7 @@ const stories = [
                 "img": require("./imagens/bully.jpg"),
                 "textP": "A professora viu que Pedrinho empurrou os colegas de classe. Ele tentou se explicar mas não adiantou contar que eles também estavam fazendo isso. Ligaram para mãe de Pedrinho e ela vai ter que ir até a escola para conversar com a diretora.",
                 "textA": "A professora viu que Aninha empurrou os colegas de classe. Ela tentou se explicar mas não adiantou contar que eles também estavam fazendo isso. Ligaram para mãe de Aninha e ela vai ter que ir até a escola para conversar com a diretora.",
+                "audios": ["rain.mp3"],
                 "arestas": []
             },
             {
@@ -118,6 +127,7 @@ const stories = [
                 "img": require("./imagens/bully.jpg"),
                 "textP": "Ele odiou o dia de hoje foi um péssimo dia e nada mudou, amanhã as coisas vão continuar a mesma coisa.",
                 "textA": "Ela odiou o dia de hoje foi um péssimo dia e nada mudou, amanhã as coisas vão continuar a mesma coisa.",
+                "audios": ["rain.mp3"],
                 "arestas": []
             }
         ]

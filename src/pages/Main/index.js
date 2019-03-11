@@ -21,6 +21,7 @@ export default class Main extends Component {
     }
 
     init = () => {
+        storyService.nextVertice('A');  
         this.props.navigation.navigate('GameScreen');
       }
     

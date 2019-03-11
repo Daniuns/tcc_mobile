@@ -4,6 +4,7 @@ ADDED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/Androi
 INJECTED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/AndroidManifest.xml:1:1-27:12
 INJECTED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/AndroidManifest.xml:1:1-27:12
 INJECTED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/AndroidManifest.xml:1:1-27:12
+MERGED from [:react-native-sound] /home/daniel/Área de Trabalho/tcc_mobile/node_modules/react-native-sound/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-12:12
 MERGED from [:react-native-sensor-manager] /home/daniel/Área de Trabalho/tcc_mobile/node_modules/react-native-sensor-manager/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-gesture-handler] /home/daniel/Área de Trabalho/tcc_mobile/node_modules/react-native-gesture-handler/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.57.7] /home/daniel/.gradle/caches/transforms-1/files-1.1/react-native-0.57.7.aar/a42aede4be4dab05c330365638a13b24/AndroidManifest.xml:2:1-15:12
@@ -103,6 +104,8 @@ uses-sdk
 INJECTED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-sound] /home/daniel/Área de Trabalho/tcc_mobile/node_modules/react-native-sound/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:react-native-sound] /home/daniel/Área de Trabalho/tcc_mobile/node_modules/react-native-sound/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:8:5-10:41
 MERGED from [:react-native-sensor-manager] /home/daniel/Área de Trabalho/tcc_mobile/node_modules/react-native-sensor-manager/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-sensor-manager] /home/daniel/Área de Trabalho/tcc_mobile/node_modules/react-native-sensor-manager/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /home/daniel/Área de Trabalho/tcc_mobile/node_modules/react-native-gesture-handler/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
