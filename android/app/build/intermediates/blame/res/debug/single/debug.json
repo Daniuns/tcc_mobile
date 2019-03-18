@@ -236,6 +236,10 @@
         "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable-watch-v20/abc_dialog_material_background.xml"
     },
     {
+        "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/raw_on_the_car_suburban.mp3.flat",
+        "source": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/res/raw/on_the_car_suburban.mp3"
+    },
+    {
         "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable-mdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
     },
@@ -412,6 +416,10 @@
         "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable-xxxhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
     },
     {
+        "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/raw_rain_on_roof.mp3.flat",
+        "source": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/res/raw/rain_on_roof.mp3"
+    },
+    {
         "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable-mdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
     },
@@ -470,6 +478,10 @@
     {
         "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/raw_thunder.mp3.flat",
+        "source": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/res/raw/thunder.mp3"
     },
     {
         "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
@@ -662,6 +674,10 @@
     {
         "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/raw_phone_ringing.mp3.flat",
+        "source": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/res/raw/phone_ringing.mp3"
     },
     {
         "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
@@ -1072,6 +1088,10 @@
         "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/3358689b750cefdf4fc6fc3207aadfb9/res/layout/notification_template_icon_group.xml"
     },
     {
+        "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/raw_rain_on_the_car.mp3.flat",
+        "source": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/res/raw/rain_on_the_car.mp3"
+    },
+    {
         "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png"
     },
@@ -1116,6 +1136,10 @@
         "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable/abc_dialog_material_background.xml"
     },
     {
+        "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/raw_rain.mp3.flat",
+        "source": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/res/raw/rain.mp3"
+    },
+    {
         "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable-xhdpi-v4/abc_ic_star_half_black_16dp.png"
     },
@@ -1142,6 +1166,10 @@
     {
         "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable-xxxhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/raw_at_the_classroom.mp3.flat",
+        "source": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/res/raw/at_the_classroom.mp3"
     },
     {
         "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
@@ -1560,12 +1588,16 @@
         "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
     {
-        "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
-        "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+        "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/raw_cena_1.mp3.flat",
+        "source": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/res/raw/cena_1.mp3"
     },
     {
         "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "/home/daniel/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b5ed686180d5b6f27af02dddddd5bac2/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
     },
     {
         "merged": "/home/daniel/Área de Trabalho/tcc_mobile/android/app/build/intermediates/res/merged/debug/drawable_abc_ic_ab_back_material.xml.flat",

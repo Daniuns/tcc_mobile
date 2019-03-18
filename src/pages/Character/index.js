@@ -27,7 +27,6 @@ export default class Character extends Component {
         </Text>
     
         <ScrollView style={styles.scrollView} >
-
           <View style={styles.characters}>
             <View style={styles.btnCharacter}>
               <TouchableOpacity onPress={this.navigate.bind(this, 'pedrinho')}>
@@ -37,7 +36,7 @@ export default class Character extends Component {
                   letterSpacing: 2,
                   textAlign: 'center',
                   paddingBottom: 3,
-                  color: '#214070',
+                  color: '#2c66b7',
                   textShadowColor: '#000',
                   textShadowOffset: {width: -1, height: -1},
                   textShadowRadius: 5
@@ -72,7 +71,7 @@ export default class Character extends Component {
                     }]}>
                     Aninha
                   </Text>
-                  <Image style={styles.img} source={require('../../imagens/aninha.jpg')}/>
+                  <Image style={styles.img} source={require('../../imagens/aninha.jpeg')}/>
                   <Text style={[styles.text, {
                     fontFamily: "AmaticSC-Bold",
                     fontSize: 18,
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     padding: 10,
-    backgroundColor: '#00cefa',
+    backgroundColor: '#EC5B57',
   },
   characters:{
     height: '100%',
@@ -118,7 +117,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     width: 250,
     maxHeight: 400,
-    backgroundColor: '#fff',
+    backgroundColor: '#FCF6DE',
     borderColor: '#ccc',
     marginTop: 20,
     padding: 10,
@@ -126,7 +125,7 @@ const styles = StyleSheet.create({
   },
   img:{
     width: '100%',
-    maxHeight: 150,
+    maxHeight: 180,
     resizeMode:'stretch'
   },
   scrollView:{
