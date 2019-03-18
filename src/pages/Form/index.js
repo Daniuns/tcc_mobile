@@ -80,7 +80,7 @@ export default class Form extends Component {
             fontSize: 28,
             letterSpacing: 2,
             marginBottom: 40,
-            color: '#FFFF00',
+            color: '#f8d65b',
             textShadowColor: '#000',
             textShadowOffset: {width: -1, height: -1},
             textShadowRadius: 5  
@@ -96,8 +96,11 @@ export default class Form extends Component {
               letterSpacing: 2,
               borderRadius: 5,
               borderWidth: 1,
+              color: '#42403a',
+              marginLeft: 5,
             }]}
             placeholder={'Nome'}
+            placeholderTextColor={'#42403a'}
             onChangeText={this.changeName}
           />
 
@@ -112,9 +115,9 @@ export default class Form extends Component {
               selectedValue={informationsPlayer.gender || ''}
               style={styles.selectInput}
               onValueChange={(itemValue, itemIndex) => this.changeGender(itemValue)}>
-              <Picker.Item label="--Sexo--" value="none" />
-              <Picker.Item label="Masculino" value="Masculino" />
-              <Picker.Item label="Feminino" value="Feminino" />
+              <Picker.Item color={'#42403a'} label="Sexo" value="none" />
+              <Picker.Item color={'#42403a'} label="Masculino" value="Masculino" />
+              <Picker.Item color={'#42403a'} label="Feminino" value="Feminino" />
             </Picker>
           </View>
           
@@ -126,8 +129,10 @@ export default class Form extends Component {
               letterSpacing: 2,
               borderRadius: 5,
               borderWidth: 1,
+              color:'#42403a'
             }]}
             placeholder={'Idade'}
+            placeholderTextColor={'#42403a'}
             onChangeText={this.changeAge}
             
           />
@@ -139,8 +144,10 @@ export default class Form extends Component {
               letterSpacing: 2,
               borderRadius: 5,
               borderWidth: 1,
+              color:'#42403a'
             }]}
             placeholder={'Responsável'}
+            placeholderTextColor={'#42403a'}
             onChangeText={this.changeResponsible}
           />
         <Text style={[styles.text, {
@@ -173,7 +180,7 @@ export default class Form extends Component {
 
 const styles = StyleSheet.create({
   container:{
-    backgroundColor: '#00cefa',
+    backgroundColor: '#EC5B57',
     alignItems: 'center',
     padding: 20,
     paddingTop: 40,
@@ -203,7 +210,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'flex-end',
-    backgroundColor: '#7d09a2',
+    backgroundColor: '#876CE4',
   },
   btnContinueText: {
     color: '#FFF',

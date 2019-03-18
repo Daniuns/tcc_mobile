@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, ImageBackground, ScrollView, TouchableOpacity, Dimensions} from 'react-native';
 import { storyService } from '../../services/storyService';
 import { bindComponent } from '../../operators/bindComponent';
+import { playerService } from '../../services/playerService';
 
 export default class Main extends Component {
 
     constructor(){
         super();
-        this.state = {story: null};
+        this.state = {story: undefined, character: undefined};
     }
 
     componentDidMount(){
@@ -18,6 +19,9 @@ export default class Main extends Component {
                 this.setState({story})
             }
         );
+
+        playerService.getCharacter()
+            .subscribe(c => this.setState({character: c}));
     }
 
     init = () => {
@@ -25,8 +29,12 @@ export default class Main extends Component {
         this.props.navigation.navigate('GameScreen');
       }
     
-    navigate = () => {
+    navigateStories = () => {
         this.props.navigation.navigate('StoriesScreen');
+    }
+
+    navigateCharacter = () => {
+      this.props.navigation.navigate('Character');
     }
 
   render() {
@@ -34,11 +42,11 @@ export default class Main extends Component {
           return null;
       }
 
-      const {story} = this.state;
+      const {story, character} = this.state;
     return (
         <ImageBackground
             style={styles.image}
-            source={story.img} 
+            source={character == 'pedrinho' ? story.imgP : story.imgA} 
             resizeMode='stretch'
         >     
             <View style={styles.container}>
@@ -48,7 +56,7 @@ export default class Main extends Component {
                       <Text style={[styles.text, {
                         fontFamily: "KidsZone",
                         fontSize: 28,
-                        color: '#FFFF00',
+                        color: '#FFF',
                         letterSpacing: 2,
                         textShadowColor: '#000',
                         textShadowOffset: {width: -1, height: -1},
@@ -58,18 +66,32 @@ export default class Main extends Component {
                         Iniciar
                       </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={this.navigate} style={styles.btnOption}>
+                    <TouchableOpacity onPress={this.navigateStories} style={styles.btnOption}>
                     <Text style={[styles.text, {
                         fontFamily: "KidsZone",
                         fontSize: 28,
                         letterSpacing: 2,
-                        color: '#FFFF00',
+                        color: '#FFF',
                         textShadowColor: '#000',
                         textShadowOffset: {width: -1, height: -1},
                         textShadowRadius: 10
                       }]}
                       >
                         Histórias
+                      </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={this.navigateCharacter} style={styles.btnOption}>
+                    <Text style={[styles.text, {
+                        fontFamily: "KidsZone",
+                        fontSize: 28,
+                        letterSpacing: 2,
+                        color: '#FFF',
+                        textShadowColor: '#000',
+                        textShadowOffset: {width: -1, height: -1},
+                        textShadowRadius: 10
+                      }]}
+                      >
+                        Personagens
                       </Text>
                     </TouchableOpacity>
                 </View>
@@ -98,7 +120,7 @@ container:{
     borderRadius: 20,
     borderWidth: 2,
     borderColor: '#44131a',
-    backgroundColor: '#00cefa',
+    backgroundColor: '#876CE4',
     margin: 5
   },
   textOption:{

@@ -2857,8 +2857,14 @@ public final class R {
     public static final int ic_launcher_round=0x7f0a0001;
   }
   public static final class raw {
-    public static final int rain=0x7f0b0000;
-    public static final int thunder=0x7f0b0001;
+    public static final int at_the_classroom=0x7f0b0000;
+    public static final int cena_1=0x7f0b0001;
+    public static final int on_the_car_suburban=0x7f0b0002;
+    public static final int phone_ringing=0x7f0b0003;
+    public static final int rain=0x7f0b0004;
+    public static final int rain_on_roof=0x7f0b0005;
+    public static final int rain_on_the_car=0x7f0b0006;
+    public static final int thunder=0x7f0b0007;
   }
   public static final class string {
     public static final int abc_action_bar_home_description=0x7f0c0000;

@@ -1,42 +1,100 @@
 import rxjs, { BehaviorSubject } from "rxjs";
 import Sound from 'react-native-sound';
-import {filter} from 'rxjs/operators'
+import {filter, of} from 'rxjs/operators'
+import { bindComponent } from '../operators/bindComponent';
 
 Sound.setCategory('Playback');
 
 
 
 export class AudioService {
-    audios$ = new BehaviorSubject([]);
+    audiosScene$ = new BehaviorSubject([]);
+    descriptionScene$ = new BehaviorSubject({});
+    durationScene$ = new BehaviorSubject(undefined);
 
-    setAudio(audios) {
+    setDurationDescription = (duration) => {
+        this.durationScene$.next(duration);
+    }
 
+    getDurationScene = () => {
+        return this.durationScene$.asObservable();
+    }
+
+    setAudiosDescriptionScene = (a) => {
+
+        const newAudio = new Sound(a.audio, Sound.MAIN_BUNDLE, (error) => {  
+                    
+            if(error){
+                console.log('error on load the audio');
+            }
+            if(a.repeat){
+                newAudio.setNumberOfLoops(a.repeat);
+            }
+
+            this.setDurationDescription(newAudio.getDuration());
+        });
+
+        this.descriptionScene$.next(newAudio);
+
+        this.playDescriptionScene();
+    }
+
+    playDescriptionScene = () => {
+        this.getDescriptionScene()
+            .subscribe(audio => {
+                setTimeout(() => {
+                    audio.setVolume(0).play(success => {
+                            if (success) {
+                                console.log('successfully finished playing');
+                              } else {
+                                console.log('playback failed due to audio decoding errors');
+                              }
+                        });
+                }, 500)
+            });
+    }
+
+
+    getDescriptionScene = () => {
+        return this.descriptionScene$.asObservable()
+    }
+
+
+    setAudiosScene = (audios) => {
+        console.log(audios)
         const allAudios = [];
-            audios.map(audioText => {
-                console.log(audioText)
-                const newSound = new Sound(audioText, Sound.MAIN_BUNDLE, (error) => {  
+            audios.map(a => {
+                const newAudio = new Sound(a.audio, Sound.MAIN_BUNDLE, (error) => {  
                     
                     if(error){
                         console.log('error on load the audio');
                     }
+                    if(a.repeat){
+                        newAudio.setNumberOfLoops(a.repeat);
+                    }
 
-                    newSound.setNumberOfLoops(-1);
+                    newAudio.setVolume(a.volume);
+
                 });
-                    console.log('teste', newSound);
-
-                allAudios.push(newSound);
+                allAudios.push(newAudio);
             })
 
-            this.audios$.next(allAudios);
+            this.audiosScene$.next(allAudios);
+
+            audioService.playAudiosScene()
+
     }
 
-    playAudio(){
-        this.getAudio()
-            .subscribe(audios => {
-                audios.map(audio => {
-                    console.log('myAudio', audio);
-                    setTimeout(() => {
-                        audio.play(success => {
+    playAudiosScene = () => {
+        this.getAudioScene()
+            .pipe(bindComponent(this))
+                .subscribe(audios => {
+                    console.log('audios', audios);
+                    audios.map(audio => {
+                        setTimeout(() => {
+                            console.log('aud', audio.getVolume());
+                            console.log('aud', audio);
+                        audio.setVolume(audio.getVolume()).play(success => {
                                 if (success) {
                                     console.log('successfully finished playing');
                                   } else {
@@ -48,17 +106,22 @@ export class AudioService {
             })
     }
 
-    stopActualAudios(){
-        this.getAudio()
-            .subscribe(audios => {
+    stopActualAudiosScene = () => {
+        this.getAudioScene()
+            .pipe(bindComponent(this))
+                .subscribe(audios => {
                 audios.map(audio => {
                         audio.stop();
                 })
             })
     }
 
-    getAudio(){
-        return this.audios$.asObservable()
+    getAudioScene = () => {
+        return this.audiosScene$.asObservable()
+    }
+
+    playAgain = () => {
+
     }
 }
 

@@ -41,38 +41,38 @@ export default class StoriesScreen extends Component {
           Selecione uma História
         </Text>
          <ScrollView style={styles.scrollView} >
-         <View style={styles.characters}>
-        {stories.map((story, key) => {
-            return(
-              <View style={styles.btnCharacter} key={key} onPress={this.navigate.bind(this, story)}>
-                <TouchableOpacity onPress={this.navigate.bind(this, story)}>
-                  <Text style={[styles.text, {
-                    fontFamily: "KidsZone",
-                    fontSize: 28,
-                    letterSpacing: 2,
-                    textAlign: 'center',
-                    color: '#234f92',
-                    textShadowColor: '#000',
-                    textShadowOffset: {width: -1, height: -1},
-                    textShadowRadius: 5
-                  }]}
-                  >
-                    {story.title}
-                  </Text>
-                  <Image style={styles.img} source={story.img}/>
-                  <Text style={[styles.text, {
-                    fontFamily: "AmaticSC-Bold",
-                    fontSize: 18,
-                    letterSpacing: 2,
-                  }]}
-                  >
-                      {char == 'Pedrinho'? story.descriptionP : story.descriptionA }
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            );
-          })}
+          <View style={styles.stories}>
+            {stories.map((story, key) => {
+                return(
+                  <View style={styles.btnStories} key={key}>
+                    <TouchableOpacity onPress={this.navigate.bind(this, story)}>
+                      <Text style={[styles.text, {
+                        fontFamily: "KidsZone",
+                        fontSize: 28,
+                        letterSpacing: 2,
+                        textAlign: 'center',
+                        color: '#2c66b7',
+                        textShadowColor: '#000',
+                        textShadowOffset: {width: -1, height: -1},
+                        textShadowRadius: 5
+                      }]}
+                      >
+                        {story.title}
+                      </Text>
+                      <Image style={styles.img} source={char == 'pedrinho' ? story.imgP : story.imgA}/>
+                      <Text style={[styles.text, {
+                        fontFamily: "AmaticSC-Bold",
+                        fontSize: 18,
+                        letterSpacing: 2,
+                      }]}
+                      >
+                          {char == 'pedrinho'? story.descriptionP : story.descriptionA }
+                      </Text>
+                    </TouchableOpacity>
                   </View>
+                );
+              })}
+            </View>
         </ScrollView >
       </View>
     );
@@ -84,9 +84,9 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     padding: 10,
-    backgroundColor: '#00cefa',
+    backgroundColor: '#EC5B57',
   },
-  characters:{
+  stories:{
     height: '100%',
   },
   title:{
@@ -100,12 +100,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     paddingBottom: 3
   },
-  btnCharacter:{
+  btnStories:{
     borderRadius: 5,
     borderWidth: 2,
     width: 250,
     maxHeight: 350,
-    backgroundColor: '#fff',
+    backgroundColor: '#FCF6DE',
     borderColor: '#ccc',
     marginTop: 20,
     padding: 10,
