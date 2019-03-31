@@ -4,8 +4,8 @@ const stories = [
         "title": "Bullying",
         "descriptionP": "Os colegas de Pedrinho ficam empurrando suas costas durante a aula, está sendo muito chato ir para a escola, e pedrinho se sente muito triste",
         "descriptionA": "Os colegas de Aninha ficam empurrando suas costas durante a aula, está sendo muito chato ir para a escola, e Aninha se sente muito triste",        
-        "imgP": require("./imagens/bullying_p.png"),
-        "imgA": require("./imagens/bullying_a.png"),
+        "imgP": require("./imagens/bully_p.jpeg"),
+        "imgA": require("./imagens/bully_a.jpeg"),
         "vertices":[
             {
                 "value": "A",
@@ -305,11 +305,11 @@ const stories = [
     },
     {
         "id": 2,
-        "title": "Perda",
+        "title": "",
         "descriptionP": "Pedrinho perdeu seu cachorrinho de estimação, ele está muito triste, e está sempre chorando.",
         "descriptionA": "Aninha perdeu seu cachorrinho de estimação, ele está muito triste, e está sempre chorando.",        
-        "imgP": require("./imagens/death.png"),
-        "imgA": require("./imagens/death.png"),
+        "imgP": require("./imagens/coming_soon.png"),
+        "imgA": require("./imagens/coming_soon.png"),
         "vertices":[
             {
                 "value": "A",

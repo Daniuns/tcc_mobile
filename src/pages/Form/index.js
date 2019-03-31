@@ -96,11 +96,12 @@ export default class Form extends Component {
               letterSpacing: 2,
               borderRadius: 5,
               borderWidth: 1,
-              color: '#42403a',
+              borderColor: '#FFF',
+              color: '#FFF',
               marginLeft: 5,
             }]}
             placeholder={'Nome'}
-            placeholderTextColor={'#42403a'}
+            placeholderTextColor={'#FFF'}
             onChangeText={this.changeName}
           />
 
@@ -110,14 +111,16 @@ export default class Form extends Component {
               letterSpacing: 2,
               borderRadius: 5,
               borderWidth: 1,
+              borderColor: '#FFF',
             }]}>
             <Picker
               selectedValue={informationsPlayer.gender || ''}
               style={styles.selectInput}
+              mode={'dialog'}
               onValueChange={(itemValue, itemIndex) => this.changeGender(itemValue)}>
-              <Picker.Item color={'#42403a'} label="Sexo" value="none" />
-              <Picker.Item color={'#42403a'} label="Masculino" value="Masculino" />
-              <Picker.Item color={'#42403a'} label="Feminino" value="Feminino" />
+              <Picker.Item enabled={false} color={'#000'} label="Sexo" value="none" />
+              <Picker.Item color={'#000'} label="Masculino" value="Masculino" />
+              <Picker.Item color={'#000'} label="Feminino" value="Feminino" />
             </Picker>
           </View>
           
@@ -129,10 +132,11 @@ export default class Form extends Component {
               letterSpacing: 2,
               borderRadius: 5,
               borderWidth: 1,
-              color:'#42403a'
+              color:'#FFF',
+              borderColor: '#FFF',
             }]}
             placeholder={'Idade'}
-            placeholderTextColor={'#42403a'}
+            placeholderTextColor={'#FFF'}
             onChangeText={this.changeAge}
             
           />
@@ -144,10 +148,11 @@ export default class Form extends Component {
               letterSpacing: 2,
               borderRadius: 5,
               borderWidth: 1,
-              color:'#42403a'
+              color:'#FFF',
+              borderColor: '#FFF',
             }]}
             placeholder={'Responsável'}
-            placeholderTextColor={'#42403a'}
+            placeholderTextColor={'#FFF'}
             onChangeText={this.changeResponsible}
           />
         <Text style={[styles.text, {
@@ -180,7 +185,7 @@ export default class Form extends Component {
 
 const styles = StyleSheet.create({
   container:{
-    backgroundColor: '#EC5B57',
+    backgroundColor: '#1b212e',
     alignItems: 'center',
     padding: 20,
     paddingTop: 40,
@@ -197,10 +202,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   selectInput:{
-    borderRadius: 5,
-    borderWidth: 1,
-    height: 30,
-    margin: 10
+    color: '#FFF',
   },
   btnContinue:{
     borderRadius: 5,
