@@ -1,16 +1,31 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Modal, ImageBackground, ScrollView} from 'react-native';
 import { playerService } from '../../services/playerService';
-import { ScrollView } from 'react-native-gesture-handler';
 
 export default class Character extends Component {
 
-  navigate = (character) => {
+  constructor(){
+    super();
+    this.state = {previewCharacter: undefined, modalVisible: false};
+  }
+
+  navigate = () => {
+    const character = this.state.previewCharacter;
     playerService.setCharacter(character);
+    this.closeModal();
     this.props.navigation.navigate('StoriesScreen');
   }
 
+  previewCharacter = (character) => {
+    this.setState({previewCharacter: character, modalVisible: true})
+  }
+
+  closeModal = () => {
+    this.setState({modalVisible: false})
+  }
+
   render() {
+    const {previewCharacter} = this.state;
     return (
       <View style={styles.container} >
         <Text style={[styles.text, {
@@ -26,66 +41,135 @@ export default class Character extends Component {
           Selecione um personagem
         </Text>
     
-        <ScrollView style={styles.scrollView} >
+        <ScrollView style={styles.scrollView}>
           <View style={styles.characters}>
-            <View style={styles.btnCharacter}>
-              <TouchableOpacity onPress={this.navigate.bind(this, 'pedrinho')}>
-                <Text style={[styles.text, {
-                  fontFamily: "KidsZone",
-                  fontSize: 28,
-                  letterSpacing: 2,
-                  textAlign: 'center',
-                  paddingBottom: 3,
-                  color: '#2c66b7',
-                  textShadowColor: '#000',
-                  textShadowOffset: {width: -1, height: -1},
-                  textShadowRadius: 5
-                }]}>
-                    Pedrinho
-                </Text>
-                <Image style={styles.img} source={require('../../imagens/pedrinho.jpg')}/>
-                <Text style={[styles.text, {
-                  fontFamily: "AmaticSC-Bold",
-                  fontSize: 18,
-                  letterSpacing: 2,
-                }]}>
-                    Pedrinho é uma criança muito legal, ele tem 9 anos e adora brincar.
-                    Pedrinho não gosta muito da escola, e recentemente perdeu seu cachorrinho de estimação.
-                    Estão sendo dias ruins para Pedrinho. 
-                </Text>
+              <TouchableOpacity style={styles.btnCharacter} onPress={this.previewCharacter.bind(this, 'pedrinho')}>
+                <ImageBackground
+                  resizeMode='stretch'
+                  style={styles.ImageBackground}
+                  source={require('../../imagens/pedrinho.jpeg')}
+                >
+                  <Text style={[styles.text, {
+                    fontFamily: "KidsZone",
+                    fontSize: 18,
+                    letterSpacing: 2,
+                    paddingBottom: 3,
+                    color: 'red',
+                    textShadowColor: '#000',
+                    textShadowOffset: {width: -1, height: -1},
+                    textShadowRadius: 5,
+                    padding: 10
+                  }]}>
+                      Pedrinho
+                  </Text>
+
+                </ImageBackground>
+
               </TouchableOpacity>
 
-            </View>
-            <View style={styles.btnCharacter}>
-              <TouchableOpacity onPress={this.navigate.bind(this, 'aninha')}>
+              <TouchableOpacity style={styles.btnCharacter} onPress={this.previewCharacter.bind(this, 'aninha')}>
+                <ImageBackground
+                  resizeMode='stretch'
+                  style={styles.ImageBackground}
+                  source={require('../../imagens/aninha.jpeg')}
+                >
                   <Text style={[styles.text, {
+                    fontFamily: "KidsZone",
+                    fontSize: 18,
+                    letterSpacing: 2,
+                    paddingBottom: 3,
+                    color: '#f483b6',
+                    textShadowColor: '#000',
+                    textShadowOffset: {width: -1, height: -1},
+                    textShadowRadius: 5,
+                    padding: 10
+                  }]}>
+                      Aninha
+                  </Text>
+
+                </ImageBackground>
+
+              </TouchableOpacity>
+          </View>
+        </ScrollView>
+
+          
+        {previewCharacter ? 
+          <Modal
+              animationType="slide"
+              transparent={false}
+              visible={this.state.modalVisible}
+              onRequestClose={() => {
+                Alert.alert('Modal has been closed.');
+              }}
+          >
+            <ImageBackground 
+              resizeMode='stretch'
+              style={styles.ImageBackgroundModal}
+              source={previewCharacter == 'pedrinho' ? require('../../imagens/pedrinho.jpeg') : require('../../imagens/aninha.jpeg')}
+              blurRadius={2}
+            >
+              <View style={{padding: 10, justifyContent: 'space-around', height: '100%'}}>
+                <Text style={[styles.text, {
+                    fontFamily: "KidsZone",
+                    fontSize: 28,
+                    letterSpacing: 2,
+                    color: '#FFFF00',
+                    textShadowColor: '#000',
+                    textShadowOffset: {width: -1, height: -1},
+                    textShadowRadius: 5,
+                    textAlign: 'center'
+                  }]}
+                >
+                  {previewCharacter == 'pedrinho' ? 
+                    `Pedrinho é uma criança muito legal, ele tem 9 anos e adora brincar.
+Pedrinho não gosta muito da escola, e recentemente perdeu seu cachorrinho de estimação.
+Estão sendo dias ruins para Pedrinho.`
+                    : `Aninha é uma criança muito divertida, ela tem 9 anos e adora brincar.
+Aninha não gosta muito da escola, e recentemente perdeu seu cachorrinho de estimação.
+Estão sendo dias ruins para Aninha.`
+                  }
+                </Text>
+
+                <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+                  <TouchableOpacity onPress={this.closeModal}>
+                    <Text style={[styles.text, {
                       fontFamily: "KidsZone",
                       fontSize: 28,
                       letterSpacing: 2,
-                      textAlign: 'center',
-                      color: '#f483b6',
-                      paddingBottom: 3,
+                      color: 'red',
                       textShadowColor: '#000',
+                      padding: 10,
                       textShadowOffset: {width: -1, height: -1},
-                      textShadowRadius: 5
+                      textShadowRadius: 5,
+                      textDecorationLine: 'underline'
                     }]}>
-                    Aninha
-                  </Text>
-                  <Image style={styles.img} source={require('../../imagens/aninha.jpeg')}/>
-                  <Text style={[styles.text, {
-                    fontFamily: "AmaticSC-Bold",
-                    fontSize: 18,
-                    letterSpacing: 2,
-                    marginBottom: 40,    
-                  }]}>
-                    Aninha é uma criança muito divertida, ela tem 9 anos e adora brincar.
-                    Aninha não gosta muito da escola, e recentemente perdeu seu cachorrinho de estimação.
-                    Estão sendo dias ruins para Aninha.
-                  </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </ScrollView>
+                      Cancelar
+                    </Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress={this.navigate}>
+                    <Text style={[styles.text, {
+                      fontFamily: "KidsZone",
+                      fontSize: 28,
+                      letterSpacing: 2,
+                      color: '#68d23f',
+                      textShadowColor: '#000',
+                      padding: 10,
+                      textShadowOffset: {width: -1, height: -1},
+                      textShadowRadius: 5,
+                      textDecorationLine: 'underline'
+                    }]}>
+                      Continuar
+                    </Text>
+                  </TouchableOpacity>
+
+                </View>
+              </View>
+            </ImageBackground>
+          </Modal>
+      :null}
+
       </View>
     );
   }
@@ -96,7 +180,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     padding: 10,
-    backgroundColor: '#EC5B57',
+    backgroundColor: '#1b212e',
   },
   characters:{
     height: '100%',
@@ -116,11 +200,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 2,
     width: 250,
-    maxHeight: 400,
+    height: 270,
     backgroundColor: '#FCF6DE',
     borderColor: '#ccc',
     marginTop: 20,
-    padding: 10,
     alignSelf: 'center',
   },
   img:{
@@ -128,6 +211,17 @@ const styles = StyleSheet.create({
     maxHeight: 180,
     resizeMode:'stretch'
   },
+
+  ImageBackground:{
+    justifyContent: 'flex-end',
+    width: '100%',
+    height: '100%',
+  },
+  ImageBackgroundModal:{
+    width: '100%',
+    height: '100%',
+  },
+
   scrollView:{
     width: '100%',
   }

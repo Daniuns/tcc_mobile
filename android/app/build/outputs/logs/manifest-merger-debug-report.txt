@@ -79,11 +79,11 @@ MERGED from [org.webkit:android-jsc:r174650] /home/daniel/.gradle/caches/transfo
 activity#com.tcc_mobile.MainActivity
 ADDED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/AndroidManifest.xml:14:7-24:18
 	android:screenOrientation
-		ADDED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/AndroidManifest.xml:19:9-45
+		ADDED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/AndroidManifest.xml:18:9-45
 	android:label
 		ADDED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/AndroidManifest.xml:16:9-41
 	android:windowSoftInputMode
-		ADDED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/AndroidManifest.xml:18:9-51
+		ADDED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/AndroidManifest.xml:19:9-48
 	android:configChanges
 		ADDED from /home/daniel/Área de Trabalho/tcc_mobile/android/app/src/main/AndroidManifest.xml:17:9-79
 	android:name
