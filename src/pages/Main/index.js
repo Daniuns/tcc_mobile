@@ -21,7 +21,8 @@ export default class Main extends Component {
         );
 
         playerService.getCharacter()
-            .subscribe(c => this.setState({character: c}));
+          .pipe(bindComponent(this))
+          .subscribe(c => this.setState({character: c}));
     }
 
     init = () => {

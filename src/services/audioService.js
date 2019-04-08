@@ -10,9 +10,11 @@ Sound.setCategory('Playback');
 export class AudioService {
     audiosScene$ = new BehaviorSubject([]);
     descriptionScene$ = new BehaviorSubject({});
+    isAudioPlaying$ = new BehaviorSubject(true);
     durationScene$ = new BehaviorSubject(undefined);
 
     setDurationDescription = (duration) => {
+        console.log('d', duration);
         this.durationScene$.next(duration);
     }
 
@@ -20,9 +22,19 @@ export class AudioService {
         return this.durationScene$.asObservable();
     }
 
-    setAudiosDescriptionScene = (a) => {
+     setIsAudioPlaying = (boolean) => {
+        this.isAudioPlaying$.next(boolean);
+    }
 
-        const newAudio = new Sound(a.audio, Sound.MAIN_BUNDLE, (error) => {  
+    isAudioPlaying = () => {
+        return this.isAudioPlaying$.asObservable();
+    }
+
+    setAudiosDescriptionScene = (a, character) => {
+
+        const audio = character == 'pedrinho' ? a.audioP : a.audioA;
+
+        const newAudio = new Sound(audio, Sound.MAIN_BUNDLE, (error) => {  
                     
             if(error){
                 console.log('error on load the audio');
@@ -33,7 +45,6 @@ export class AudioService {
 
             this.setDurationDescription(newAudio.getDuration());
         });
-
         this.descriptionScene$.next(newAudio);
 
         this.playDescriptionScene();
@@ -43,9 +54,10 @@ export class AudioService {
         this.getDescriptionScene()
             .subscribe(audio => {
                 setTimeout(() => {
-                    audio.setVolume(0).play(success => {
+                    audio.setVolume(0.7).play(success => {
                             if (success) {
-                                console.log('successfully finished playing');
+                                this.setIsAudioPlaying(false);                
+                                console.log('successfully finished');
                               } else {
                                 console.log('playback failed due to audio decoding errors');
                               }
