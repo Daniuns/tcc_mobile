@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Modal, ImageBackground, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Modal, ImageBackground, Image, ScrollView} from 'react-native';
 import { playerService } from '../../services/playerService';
+
+const pedrinhoDescription = `Pedrinho é uma criança muito legal, ele tem 9 anos e adora brincar.
+Pedrinho não gosta muito da escola, e recentemente perdeu seu cachorrinho de estimação.
+Estão sendo dias ruins para Pedrinho.`
+
+const aninhaDescription = `Aninha é uma criança muito divertida, ela tem 9 anos e adora brincar.
+Aninha não gosta muito da escola, e recentemente perdeu seu cachorrinho de estimação.
+Estão sendo dias ruins para Aninha.`
 
 export default class Character extends Component {
 
@@ -32,7 +40,7 @@ export default class Character extends Component {
           fontFamily: "KidsZone",
           fontSize: 28,
           letterSpacing: 2,
-          color: '#FFFF00',
+          color: '#FFF',
           textShadowColor: '#000',
           textShadowOffset: {width: -1, height: -1},
           textShadowRadius: 5,
@@ -103,70 +111,90 @@ export default class Character extends Component {
                 Alert.alert('Modal has been closed.');
               }}
           >
-            <ImageBackground 
-              resizeMode='stretch'
-              style={styles.ImageBackgroundModal}
-              source={previewCharacter == 'pedrinho' ? require('../../imagens/pedrinho.jpeg') : require('../../imagens/aninha.jpeg')}
-              blurRadius={2}
-            >
-              <View style={{padding: 10, justifyContent: 'space-around', height: '100%'}}>
-                <Text style={[styles.text, {
-                    fontFamily: "KidsZone",
-                    fontSize: 28,
-                    letterSpacing: 2,
-                    color: '#FFFF00',
-                    textShadowColor: '#000',
-                    textShadowOffset: {width: -1, height: -1},
-                    textShadowRadius: 5,
-                    textAlign: 'center'
-                  }]}
-                >
-                  {previewCharacter == 'pedrinho' ? 
-                    `Pedrinho é uma criança muito legal, ele tem 9 anos e adora brincar.
-Pedrinho não gosta muito da escola, e recentemente perdeu seu cachorrinho de estimação.
-Estão sendo dias ruins para Pedrinho.`
-                    : `Aninha é uma criança muito divertida, ela tem 9 anos e adora brincar.
-Aninha não gosta muito da escola, e recentemente perdeu seu cachorrinho de estimação.
-Estão sendo dias ruins para Aninha.`
-                  }
-                </Text>
-
-                <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-                  <TouchableOpacity onPress={this.closeModal}>
-                    <Text style={[styles.text, {
-                      fontFamily: "KidsZone",
-                      fontSize: 28,
-                      letterSpacing: 2,
-                      color: 'red',
-                      textShadowColor: '#000',
-                      padding: 10,
-                      textShadowOffset: {width: -1, height: -1},
-                      textShadowRadius: 5,
-                      textDecorationLine: 'underline'
-                    }]}>
-                      Cancelar
-                    </Text>
-                  </TouchableOpacity>
-
-                  <TouchableOpacity onPress={this.navigate}>
-                    <Text style={[styles.text, {
-                      fontFamily: "KidsZone",
-                      fontSize: 28,
-                      letterSpacing: 2,
-                      color: '#68d23f',
-                      textShadowColor: '#000',
-                      padding: 10,
-                      textShadowOffset: {width: -1, height: -1},
-                      textShadowRadius: 5,
-                      textDecorationLine: 'underline'
-                    }]}>
-                      Continuar
-                    </Text>
-                  </TouchableOpacity>
-
+              <View style={styles.container}>
+                <View style={styles.imagesModal}>
+                    <Image
+                    resizeMode='stretch'
+                    style={styles.imageModal}
+                    source={previewCharacter == 'pedrinho' ? require("../../imagens/pedrinho.jpeg") : require("../../imagens/aninha.jpeg")}
+                    />
+                    <Image
+                    resizeMode='stretch'
+                    style={styles.imageModal}
+                    source={previewCharacter == 'pedrinho' ? require("../../imagens/stay_at_home_p.jpeg") : require("../../imagens/stay_at_home_a.jpeg")}                   
+                    />
+                    <Image
+                    resizeMode='stretch'
+                    style={styles.imageModal}
+                    source={previewCharacter == 'pedrinho' ? require("../../imagens/tell_to_teacher_p.jpeg") : require("../../imagens/tell_to_teacher_a.jpeg")}                   
+                    />
                 </View>
+                <ScrollView>
+                  <View style={styles.titleWithBtns}>
+                    
+                    <Text style={[styles.text, {
+                        fontFamily: "KidsZone",
+                        fontSize: 38,
+                        letterSpacing: 2,
+                        color: '#FFF',
+                        alignSelf: 'center'
+                      }]}
+                    >
+                      {previewCharacter == 'pedrinho' ? 
+                        `Pedrinho`
+                        : `Aninha`
+                      }
+                    </Text>
+
+                    <View style={{flexDirection: 'column', justifyContent: 'space-between'}}>
+                    <TouchableOpacity style={styles.btnContinue} onPress={this.navigate}>
+                        <Text style={[styles.text, {
+                            fontFamily: "KidsZone",
+                            fontSize: 18,
+                            letterSpacing: 2,
+                            color: '#FFF',
+                            textShadowColor: '#000',
+                            textShadowOffset: {width: -1, height: -1},
+                            textShadowRadius: 5,
+                          }]}>
+                          Continuar
+                        </Text>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity style={styles.btnCancel} onPress={this.closeModal}>
+                        <Text style={[styles.text, {
+                            fontFamily: "KidsZone",
+                            fontSize: 18,
+                            letterSpacing: 2,
+                            color: '#FFF',
+                            textShadowColor: '#000',
+                            textShadowOffset: {width: -1, height: -1},
+                            textShadowRadius: 5,
+                          }]}>
+                          Voltar
+                        </Text>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+
+                  <View style={{justifyContent: 'space-around'}}>
+                    <Text style={[styles.text, {
+                        fontFamily: "AmaticSC-Bold",
+                        fontSize: 28,
+                        letterSpacing: 2,
+                        color: '#FFF',
+                        textAlign: 'justify'
+                      }]}
+                      >
+                        {previewCharacter == 'pedrinho' ? 
+                          pedrinhoDescription
+                          : aninhaDescription
+                        }
+                      </Text>
+                  </View>
+                  
+                </ScrollView>
               </View>
-            </ImageBackground>
           </Modal>
       :null}
 
@@ -224,5 +252,47 @@ const styles = StyleSheet.create({
 
   scrollView:{
     width: '100%',
+  },
+  imagesModal:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: '#FCF6DE',
+    padding: 3,
+    height: 170
+  },
+  imageModal:{
+    width: '33%',
+    height: '100%',
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: '#FAFAFA',
+  },
+  btnContinue:{
+    borderRadius: 5,
+    borderWidth: 1,
+    height: 50,
+    width: 130,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'flex-end',
+    backgroundColor: '#68d23f',
+  },
+  btnCancel:{
+    borderRadius: 5,
+    borderWidth: 1,
+    height: 50,
+    width: 130,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'flex-end',
+    backgroundColor: 'red',
+  },
+
+  titleWithBtns:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+    marginBottom: 20,
+    height: 110,
   }
 });

@@ -7,34 +7,45 @@ import { bindComponent } from '../../operators/bindComponent';
 import { playerService } from '../../services/playerService';
 import Sound from 'react-native-sound';
 import { audioService } from '../../services/audioService';
-import {filter, combineLatest, take} from 'rxjs/operators'
+import {filter, combineLatest, take, tap} from 'rxjs/operators'
 
 Sound.setCategory('Playback');
 
 export default class GameScreen extends Component {
     constructor(){
         super();
-        this.state = {actualVertice: undefined, character: undefined, timeInit: undefined, isPlaying: true, duration: undefined}
+        this.state = {actualVertice: undefined, character: undefined, timeInit: undefined, isAudioPlaying: true, duration: undefined}
     }
     componentDidMount(){
+
+        audioService.setIsAudioPlaying(true);        
+
         
         storyService.getActualVertice()
             .pipe(
-                filter(actualVertice => !!actualVertice),
+                combineLatest(playerService.getCharacter()),
+                filter(([actualVertice, character]) => !!actualVertice && !!character),
                 bindComponent(this)
             )
-            .subscribe(actualVertice => {
+            .subscribe(([actualVertice, character]) => {
+                this.setState({character});
                 const time = new Date().getTime(); 
                 this.setState({timeInit: time});
                 this.setState({actualVertice});
 
-                if(actualVertice.midia.audiosScene.length > 0){
+                if(actualVertice.midia.audiosScene.length > 0 && !!character){
                     audioService.setAudiosScene(actualVertice.midia.audiosScene);
-                    audioService.setAudiosDescriptionScene(actualVertice.midia.descriptionScene);
-                    // audioService.playAudiosScene()
-                    // audioService.playDescriptionScene()
+                    audioService.setAudiosDescriptionScene(actualVertice.midia.descriptionScene, character);
                 }
             });
+
+            audioService.isAudioPlaying()
+            .pipe(
+                bindComponent(this)
+            )
+                .subscribe(isAudioPlaying => {
+                    this.setState({isAudioPlaying});
+            })
 
             audioService.getDurationScene()
             .pipe(
@@ -43,10 +54,7 @@ export default class GameScreen extends Component {
             )
                 .subscribe(duration => {
                     this.setState({duration});
-                setTimeout(() => {
-                    this.setState({isPlaying: false})
-                }, duration * 1000);
-            })
+                });
 
 
         playerService.getCharacter()
@@ -55,6 +63,7 @@ export default class GameScreen extends Component {
     }
 
     finish = async () => {
+        
         
         try{
             await relatoryService.sendRelatory();
@@ -69,7 +78,7 @@ export default class GameScreen extends Component {
 
     nextVertice = (aresta) => {
         audioService.stopActualAudiosScene();
-        this.setState({isPlaying: true})
+        audioService.setIsAudioPlaying(true);
 
         const {actualVertice, character, timeInit} = this.state;
         
@@ -84,8 +93,9 @@ export default class GameScreen extends Component {
     }
 
     playAgain = () => {
-        this.setState({isPlaying: true})
-        audioService.setAudiosDescriptionScene(this.state.actualVertice.midia.descriptionScene)
+        const {actualVertice, character} = this.state;
+        audioService.setIsAudioPlaying(true);        
+        audioService.setAudiosDescriptionScene(actualVertice.midia.descriptionScene, character);
     }
 
     render(){
@@ -93,7 +103,7 @@ export default class GameScreen extends Component {
             return null;
         }
 
-        const {actualVertice, character, isPlaying} = this.state;
+        const {actualVertice, character, isAudioPlaying} = this.state;
         return(
         <ImageBackground 
             style={styles.image}
@@ -102,7 +112,7 @@ export default class GameScreen extends Component {
         >
             <View style={styles.container}>
             <View>
-                {!isPlaying ? 
+                {!isAudioPlaying ? 
                 <View 
                     style={styles.audio}
                 >
@@ -146,7 +156,7 @@ export default class GameScreen extends Component {
                 <View style={styles.containerImage}>
                 </View>
                 <View style={styles.options}>
-                    {actualVertice.arestas.length > 0  && !isPlaying
+                    {actualVertice.arestas.length > 0  && !isAudioPlaying
                     ? actualVertice.arestas.map((aresta, key) => {
                         return(
                             <TouchableOpacity 
@@ -171,7 +181,7 @@ export default class GameScreen extends Component {
                             </TouchableOpacity>
                             );
                         }) : null}
-                    {actualVertice.arestas.length < 1 && !isPlaying
+                    {actualVertice.arestas.length < 1 && !isAudioPlaying
                     ?
                         <TouchableOpacity 
                             onPress={this.finish} 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Image, Modal, ImageBackground, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Image, Modal, ImageBackground, ScrollView, BackHandler, Alert} from 'react-native';
 import stories from '../../stories';
 import { storyService } from '../../services/storyService';
 import { playerService } from '../../services/playerService';
@@ -43,7 +43,7 @@ export default class StoriesScreen extends Component {
           fontSize: 28,
           letterSpacing: 2,
           textAlign: 'center',
-          color: '#FFFF00',
+          color: '#FFF',
           textShadowColor: '#000',
           textShadowOffset: {width: -1, height: -1},
           textShadowRadius: 10
@@ -59,7 +59,7 @@ export default class StoriesScreen extends Component {
                   <TouchableOpacity key={key} style={styles.btnStories} onPress={this.previewStory.bind(this, story)}>
                       <ImageBackground  
                           resizeMode='stretch'
-                          style={styles.ImageBackground}
+                          style={styles.imageBackground}
                           source={char == 'pedrinho' ? story.imgP : story.imgA}
                       >
                           <Text style={[styles.text, {
@@ -91,63 +91,82 @@ export default class StoriesScreen extends Component {
                 Alert.alert('Modal has been closed.');
               }}
           >
-            <ImageBackground 
-              resizeMode='stretch'
-              style={styles.ImageBackgroundModal}
-              source={char == 'pedrinho' ? previewStory.imgP : previewStory.imgA}
-              blurRadius={2}
-            >
-              <View style={{padding: 10, justifyContent: 'space-around', height: '100%'}}>
-                <Text style={[styles.text, {
-                    fontFamily: "KidsZone",
-                    fontSize: 32,
-                    letterSpacing: 2,
-                    color: '#FFFF00',
-                    textShadowColor: '#000',
-                    textShadowOffset: {width: -1, height: -1},
-                    textShadowRadius: 5,
-                    textAlign: 'center'
-                  }]}
-                >
-                  {char == 'pedrinho' ? previewStory.descriptionP : previewStory.descriptionA}
-                </Text>
+            <View style={styles.container}>
 
-                <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-                  <TouchableOpacity onPress={this.closeModal}>
-                    <Text style={[styles.text, {
-                      fontFamily: "KidsZone",
-                      fontSize: 28,
-                      letterSpacing: 2,
-                      color: 'red',
-                      textShadowColor: '#000',
-                      padding: 10,
-                      textShadowOffset: {width: -1, height: -1},
-                      textShadowRadius: 5,
-                      textDecorationLine: 'underline'
-                    }]}>
-                      Cancelar
-                    </Text>
-                  </TouchableOpacity>
-
-                  <TouchableOpacity onPress={this.navigate}>
-                    <Text style={[styles.text, {
-                      fontFamily: "KidsZone",
-                      fontSize: 28,
-                      letterSpacing: 2,
-                      color: '#68d23f',
-                      textShadowColor: '#000',
-                      padding: 10,
-                      textShadowOffset: {width: -1, height: -1},
-                      textShadowRadius: 5,
-                      textDecorationLine: 'underline'
-                    }]}>
-                      Continuar
-                    </Text>
-                  </TouchableOpacity>
-
+                <View style={styles.imagesModal}>
+                  <Image
+                   resizeMode='stretch'
+                   style={styles.imageModal}
+                   source={char == 'pedrinho' ? require("../../imagens/on_the_car_p.jpeg") : require("../../imagens/on_the_car_a.jpeg")}
+                  />
+                  <Image
+                   resizeMode='stretch'
+                   style={styles.imageModal}
+                   source={char == 'pedrinho' ? require("../../imagens/at_the_school_p.jpeg") : require("../../imagens/at_the_school_a.jpeg")}
+                  />
+                  <Image
+                   resizeMode='stretch'
+                   style={styles.imageModal}
+                   source={char == 'pedrinho' ? require("../../imagens/dont_do_anything_p.jpeg") : require("../../imagens/dont_do_anything_a.jpeg")}
+                  />
                 </View>
-              </View>
-            </ImageBackground>
+              <ScrollView>
+                <View style={styles.titleWithBtns}>
+                  <Text style={[styles.text, {
+                      fontFamily: "KidsZone",
+                      fontSize: 38,
+                      letterSpacing: 2,
+                      color: '#FFF',
+                      alignSelf: 'center'
+                    }]}
+                  >
+                    {previewStory.title}
+                  </Text>
+                  <View style={{flexDirection: 'column', justifyContent: 'space-between'}}>
+                    <TouchableOpacity style={styles.btnContinue} onPress={this.navigate}>
+                        <Text style={[styles.text, {
+                          fontFamily: "KidsZone",
+                          fontSize: 18,
+                          letterSpacing: 2,
+                          color: '#FFF',
+                          textShadowColor: '#000',
+                          textShadowOffset: {width: -1, height: -1},
+                          textShadowRadius: 5,
+                        }]}>
+                          Continuar
+                        </Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity style={styles.btnCancel}onPress={this.closeModal}>
+                        <Text style={[styles.text, {
+                          fontFamily: "KidsZone",
+                          fontSize: 18,
+                          letterSpacing: 2,
+                          color: '#FFF',
+                          textShadowColor: '#000',
+                          textShadowOffset: {width: -1, height: -1},
+                          textShadowRadius: 5,
+                        }]}>
+                          Voltar
+                        </Text>
+                      </TouchableOpacity>
+
+                  </View>
+                </View>
+                <View style={{justifyContent: 'space-around'}}>
+                    <Text style={[styles.text, {
+                        fontFamily: "AmaticSC-Bold",
+                        fontSize: 28,
+                        letterSpacing: 2,
+                        color: '#FFF',
+                        textAlign: 'justify'
+                      }]}
+                    >
+                      {char == 'pedrinho' ? previewStory.descriptionP : previewStory.descriptionA}
+                      Some TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome Text
+                    </Text>
+                </View>
+              </ScrollView>
+            </View>
           </Modal>
       :null}
       </View>
@@ -186,20 +205,55 @@ const styles = StyleSheet.create({
     marginTop: 20,
     alignSelf: 'center',
   },
-  ImageBackground:{
+  imageBackground:{
     justifyContent: 'flex-end',
     width: '100%',
     height: '100%',
   },
-  ImageBackgroundModal:{
-    width: '100%',
+  imageModal:{
+    width: '33%',
     height: '100%',
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: '#FFF',
+  },
+  imagesModal:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: '#FCF6DE',
+    padding: 3,
+    height: 170
   },
   scrollView:{
     width: '100%',
   },
 
-  cancelAccept: {
-    fontSize: 28
+  btnContinue:{
+    borderRadius: 5,
+    borderWidth: 1,
+    height: 50,
+    width: 130,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'flex-end',
+    backgroundColor: '#68d23f',
+  },
+  btnCancel:{
+    borderRadius: 5,
+    borderWidth: 1,
+    height: 50,
+    width: 130,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'flex-end',
+    backgroundColor: 'red',
+  },
+
+  titleWithBtns:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+    marginBottom: 20,
+    height: 110,
   }
 });

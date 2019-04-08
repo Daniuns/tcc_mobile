@@ -13,7 +13,8 @@ const stories = [
                 "textA": "É um dia chuvoso. A  mãe de Aninha foi acordá-la. O que ela deve fazer?",
                 "midia": {
                     "descriptionScene": {
-                        "audio": "cena_1.mp3",
+                        "audioP": "waking_up_p.mp3",
+                        "audioA": "waking_up_a.mp3",
                         "repeat": false
                     },
                     "audiosScene": [
@@ -29,8 +30,8 @@ const stories = [
                         }
                     ]
                 },
-                "imgP": require("./imagens/waking_up_p.png"),
-                "imgA": require("./imagens/waking_up_a.png"),
+                "imgP": require("./imagens/waking_up_p.jpeg"),
+                "imgA": require("./imagens/waking_up_a.jpeg"),
                 "arestas": [
                     {
                         "destiny": "B",
@@ -52,7 +53,8 @@ const stories = [
                 "textA": "Aninha nem tomou café da manhã, ir para escola deixa ela sem fome. Ela entrou no carro com sua mãe, e sua mãe lhe perguntou o que estava acontecendo.",
                 "midia": {
                     "descriptionScene": {
-                        "audio": "cena_1.mp3",
+                        "audioP": "on_the_car_p.mp3",
+                        "audioA": "on_the_car_a.mp3",
                         "repeat": false
                     },
                     "audiosScene": [
@@ -68,8 +70,8 @@ const stories = [
                         }
                     ]
                 },
-                "imgP": require("./imagens/on_the_car_p.png"),
-                "imgA": require("./imagens/on_the_car_a.png"),
+                "imgP": require("./imagens/on_the_car_p.jpeg"),
+                "imgA": require("./imagens/on_the_car_a.jpeg"),
                 "arestas":[
                     {
                         "destiny": "E",
@@ -87,7 +89,8 @@ const stories = [
                 "textA":"A mãe de Aninha, tentou medir a temperatura dela com a mão, e percebeu que ela não estava quente. Após isso ela perguntou o que Aninha tem",
                 "midia": {
                     "descriptionScene": {
-                        "audio": "cena_1.mp3",
+                        "audioP": "try_sick_p.mp3",
+                        "audioA": "try_sick_a.mp3",
                         "repeat": false
                     },
                     "audiosScene": [
@@ -103,8 +106,8 @@ const stories = [
                         }
                     ]
                 },
-                "imgP": require("./imagens/try_sick_p.png"),
-                "imgA": require("./imagens/try_sick_a.png"),
+                "imgP": require("./imagens/try_sick_p.jpeg"),
+                "imgA": require("./imagens/try_sick_a.jpeg"),
                 "arestas":[
                     {
                         "destiny":"B",
@@ -118,13 +121,14 @@ const stories = [
             },
             {
                 "value": "D",
-                "imgP": require("./imagens/tell_to_her_p.png"),
-                "imgA": require("./imagens/tell_to_her_a.png"),
+                "imgP": require("./imagens/tell_to_mom_p.jpeg"),
+                "imgA": require("./imagens/tell_to_mom_a.jpeg"),
                 "textP": "A mãe de Pedrinho ficou um pouco impressionada com o que estava acontecendo, ela o abraçou e disse que iria até a escola conversar com a professora, as coisas finalmente vão começar a melhorar.",
                 "textA": "A mãe de Aninha ficou um pouco impressionada com o que estava acontecendo, ela a abraçou e disse que iria até a escola conversar com a professora, as coisas finalmente vão começar a melhorar.",
                 "midia": {
                     "descriptionScene": {
-                        "audio": "cena_1.mp3",
+                        "audioP": "tell_mom_p.mp3",
+                        "audioA": "tell_mom_a.mp3",
                         "repeat": false
                     },
                     "audiosScene": [
@@ -144,13 +148,14 @@ const stories = [
             },
             {
                 "value": "E",
-                "imgP": require("./imagens/on_the_car_p.png"),
-                "imgA": require("./imagens/on_the_car_a.png"),
+                "imgP": require("./imagens/on_the_car_p.jpeg"),
+                "imgA": require("./imagens/on_the_car_a.jpeg"),
                 "textP": " A mãe de Pedrinho ficou um pouco impressionada com o que estava acontecendo, ela disse que iria até a escola conversar com a professora, as coisas finalmente vão começar a melhorar.",
                 "textA": " A mãe de Aninha ficou um pouco impressionada com o que estava acontecendo, ela disse que iria até a escola conversar com a professora, as coisas finalmente vão começar a melhorar.",
                 "midia": {
                     "descriptionScene": {
-                        "audio": "cena_1.mp3",
+                        "audioP": "tell_mom_p.mp3",
+                        "audioA": "tell_mom_a.mp3",
                         "repeat": false
                     },
                     "audiosScene": [
@@ -170,13 +175,14 @@ const stories = [
             },
             {
                 "value": "F",
-                "imgP": require("./imagens/at_the_school_p.png"),
-                "imgA": require("./imagens/at_the_school_a.png"),
+                "imgP": require("./imagens/at_the_school_p.jpeg"),
+                "imgA": require("./imagens/at_the_school_a.jpeg"),
                 "textP": "Agora ele está na sala de aula, a professora está explicando a matéria, mas sempre que a professora vira para a lousa, os colegas  de classe de Pedrinho empurram as costas dele e dão risada, para Pedrinho isso é muito irritante.",
                 "textA": "Agora ela está na sala de aula, a professora está explicando a matéria, mas sempre que a professora vira para a lousa, os colegas  de classe de Aninha empurram as costas dele e dão risada, para Aninha isso é muito irritante.",
                 "midia": {
                     "descriptionScene": {
-                        "audio": "cena_1.mp3",
+                        "audioP": "at_the_school_p.mp3",
+                        "audioA": "at_the_school_a.mp3",
                         "repeat": false
                     },
                     "audiosScene": [
@@ -209,13 +215,14 @@ const stories = [
             },
             {
                 "value": "G",
-                "imgP": require("./imagens/stay_at_home_p.png"),
-                "imgA": require("./imagens/stay_at_home_a.png"),
+                "imgP": require("./imagens/stay_at_home_p.jpeg"),
+                "imgA": require("./imagens/stay_at_home_a.jpeg"),
                 "textP": "A mãe de Pedrinho disse que ele não precisa ir para escola. Mas ele sabe que não pode continuar mentindo todos os dias. E percebeu que nada mudou, e ele só se livrou por hoje. Ele sabe que amanhã as crianças continuarão irritando ele.",
                 "textA": "A mãe de Aninha disse que ela não precisa ir para escola. Mas ela sabe que não pode continuar mentindo todos os dias. E percebeu que nada mudou, e ela só se livrou por hoje. Ela sabe que amanhã as crianças continuarão irritando ela.",
                 "midia": {
                     "descriptionScene": {
-                        "audio": "cena_1.mp3",
+                        "audioP": "stay_home_p.mp3",
+                        "audioA": "stay_home_a.mp3",
                         "repeat": false
                     },
                     "audiosScene": [
@@ -235,13 +242,14 @@ const stories = [
             },
             {
                 "value": "H",
-                "imgP": require("./imagens/tell_to_teacher_p.png"),
-                "imgA": require("./imagens/tell_to_teacher_a.png"),
+                "imgP": require("./imagens/tell_to_teacher_p.jpeg"),
+                "imgA": require("./imagens/tell_to_teacher_a.jpeg"),
                 "textP": "Ele contou para a professora no final da aula o que estava acontecendo, ela disse que vai prestar mais atenção. E que vai ajudar ele a encarar isso. Pedrinho, agora, se sente melhor em saber que irão ajudar ele com isso.",
                 "textA": "Ela contou para a professora no final da aula o que estava acontecendo, ela disse que vai prestar mais atenção. E que vai ajudar ela a encarar isso. Aninha, agora, se sente melhor em saber que irão ajudar ela com isso.",
                 "midia": {
                     "descriptionScene": {
-                        "audio": "cena_1.mp3",
+                        "audioP": "tell_teacher_p.mp3",
+                        "audioA": "tell_teacher_a.mp3",
                         "repeat": false
                     },
                     "audiosScene": [
@@ -256,13 +264,14 @@ const stories = [
             },
             {
                 "value": "I",
-                "imgP": require("./imagens/calling_to_mom_p.png"),
-                "imgA": require("./imagens/calling_to_mom_a.png"),
+                "imgP": require("./imagens/calling_to_mom_p.jpeg"),
+                "imgA": require("./imagens/calling_to_mom_a.jpeg"),
                 "textP": "A professora viu que Pedrinho empurrou os colegas de classe. Ele tentou se explicar mas não adiantou contar que eles também estavam fazendo isso. Ligaram para mãe de Pedrinho e ela vai ter que ir até a escola para conversar com a diretora.",
                 "textA": "A professora viu que Aninha empurrou os colegas de classe. Ela tentou se explicar mas não adiantou contar que eles também estavam fazendo isso. Ligaram para mãe de Aninha e ela vai ter que ir até a escola para conversar com a diretora.",
                 "midia": {
                     "descriptionScene": {
-                        "audio": "cena_1.mp3",
+                        "audioP": "calling_to_mom_p.mp3",
+                        "audioA": "calling_to_mom_a.mp3",
                         "repeat": false
                     },
                     "audiosScene": [
@@ -282,13 +291,14 @@ const stories = [
             },
             {
                 "value": "J",
-                "imgP": require("./imagens/stay_at_home_p.png"),
-                "imgA": require("./imagens/stay_at_home_a.png"),
+                "imgP": require("./imagens/dont_do_anything_p.jpeg"),
+                "imgA": require("./imagens/dont_do_anything_a.jpeg"),
                 "textP": "Ele odiou o dia de hoje foi um péssimo dia e nada mudou, amanhã as coisas vão continuar a mesma coisa.",
                 "textA": "Ela odiou o dia de hoje foi um péssimo dia e nada mudou, amanhã as coisas vão continuar a mesma coisa.",
                 "midia": {
                     "descriptionScene": {
-                        "audio": "cena_1.mp3",
+                        "audioP": "dont_do_anything_p.mp3",
+                        "audioA": "dont_do_anything_a.mp3",
                         "repeat": false
                     },
                     "audiosScene": [
@@ -300,66 +310,6 @@ const stories = [
                     ]
                 },
                 "arestas": []
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "title": "",
-        "descriptionP": "Pedrinho perdeu seu cachorrinho de estimação, ele está muito triste, e está sempre chorando.",
-        "descriptionA": "Aninha perdeu seu cachorrinho de estimação, ele está muito triste, e está sempre chorando.",        
-        "imgP": require("./imagens/coming_soon.png"),
-        "imgA": require("./imagens/coming_soon.png"),
-        "vertices":[
-            {
-                "value": "A",
-                "text": "estamos na situação A, o que vamos fazer?",
-                "imgP": "imagens/death.png",
-                "imgA": require("./imagens/death.png"),
-                "arestas": [
-                    {
-                        "destiny": "A",
-                        "text": "se me selecionar, irei para o ponto A novamente"
-                    },
-                    {
-                        "destiny": "B",
-                        "text":"se me selecionar, irei para o ponto B"
-                    }
-                ]
-            },
-            {
-                "value": "B",
-                "text": "estamos na situação B, o que vamos fazer?",
-                "imgP": "imagens/death.png",
-                "imgA": require("./imagens/death.png"),
-                "arestas":[
-                    {
-                        "destiny": "A",
-                        "text":"Se me selecionar, irei para o ponto A"
-                    },
-                    {
-                        "destiny": "C",
-                        "text":"Se me selecionar, irei para o ponto C"
-                    },
-                    {
-                        "destiny": "D",
-                        "text":"Se me selecionar, irei para o ponto D"
-                    }
-                ]
-            },
-            {
-                "value": "C",
-                "text": "estamos na situação C, Fechou!",
-                "imgP": "imagens/death.png",
-                "imgA": require("./imagens/death.png"),
-                "arestas":[]
-            },
-            {
-                "value": "D",
-                "text": "estamos na situação D, Fechou!",
-                "imgP": "imagens/death.png",
-                "imgA": require("./imagens/death.png"),
-                "arestas":[]
             }
         ]
     }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, TextInput, Picker} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, TextInput, Picker, BackHandler} from 'react-native';
 import { playerService } from '../../services/playerService';
 import * as _ from 'lodash';
 import { bindComponent } from '../../operators/bindComponent';
@@ -10,6 +10,13 @@ export default class Form extends Component {
   constructor(){
     super();
     this.state = {informationsPlayer: {}};
+  }
+
+  componentDidMount(){
+    BackHandler.addEventListener('hardwareBackPress', () => {
+      console.log('Sorry, you can not back on this screen');
+      return true;
+    });
   }
 
   changeName = (event) => {
@@ -80,7 +87,7 @@ export default class Form extends Component {
             fontSize: 28,
             letterSpacing: 2,
             marginBottom: 40,
-            color: '#f8d65b',
+            color: '#FFF',
             textShadowColor: '#000',
             textShadowOffset: {width: -1, height: -1},
             textShadowRadius: 5  

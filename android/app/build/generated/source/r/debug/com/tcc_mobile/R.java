@@ -2857,14 +2857,32 @@ public final class R {
     public static final int ic_launcher_round=0x7f0a0001;
   }
   public static final class raw {
-    public static final int at_the_classroom=0x7f0b0000;
-    public static final int cena_1=0x7f0b0001;
-    public static final int on_the_car_suburban=0x7f0b0002;
-    public static final int phone_ringing=0x7f0b0003;
-    public static final int rain=0x7f0b0004;
-    public static final int rain_on_roof=0x7f0b0005;
-    public static final int rain_on_the_car=0x7f0b0006;
-    public static final int thunder=0x7f0b0007;
+    public static final int at_school_a=0x7f0b0000;
+    public static final int at_the_classroom=0x7f0b0001;
+    public static final int at_the_school_p=0x7f0b0002;
+    public static final int calling_to_mom_a=0x7f0b0003;
+    public static final int calling_to_mom_p=0x7f0b0004;
+    public static final int cena_1=0x7f0b0005;
+    public static final int dont_do_anything_a=0x7f0b0006;
+    public static final int dont_do_anything_p=0x7f0b0007;
+    public static final int on_the_car_a=0x7f0b0008;
+    public static final int on_the_car_p=0x7f0b0009;
+    public static final int on_the_car_suburban=0x7f0b000a;
+    public static final int phone_ringing=0x7f0b000b;
+    public static final int rain=0x7f0b000c;
+    public static final int rain_on_roof=0x7f0b000d;
+    public static final int rain_on_the_car=0x7f0b000e;
+    public static final int stay_home_a=0x7f0b000f;
+    public static final int stay_home_p=0x7f0b0010;
+    public static final int tell_mom_a=0x7f0b0011;
+    public static final int tell_mom_p=0x7f0b0012;
+    public static final int tell_teacher_a=0x7f0b0013;
+    public static final int tell_teacher_p=0x7f0b0014;
+    public static final int thunder=0x7f0b0015;
+    public static final int try_sick_a=0x7f0b0016;
+    public static final int try_sick_p=0x7f0b0017;
+    public static final int waking_up_a=0x7f0b0018;
+    public static final int waking_up_p=0x7f0b0019;
   }
   public static final class string {
     public static final int abc_action_bar_home_description=0x7f0c0000;
