@@ -103,12 +103,12 @@ export default class Form extends Component {
               letterSpacing: 2,
               borderRadius: 5,
               borderWidth: 1,
-              borderColor: '#FFF',
-              color: '#FFF',
+              borderColor: '#000',
+              color: '#000',
               marginLeft: 5,
             }]}
             placeholder={'Nome'}
-            placeholderTextColor={'#FFF'}
+            placeholderTextColor={'#000'}
             onChangeText={this.changeName}
           />
 
@@ -118,7 +118,7 @@ export default class Form extends Component {
               letterSpacing: 2,
               borderRadius: 5,
               borderWidth: 1,
-              borderColor: '#FFF',
+              borderColor: '#000',
             }]}>
             <Picker
               selectedValue={informationsPlayer.gender || ''}
@@ -139,11 +139,11 @@ export default class Form extends Component {
               letterSpacing: 2,
               borderRadius: 5,
               borderWidth: 1,
-              color:'#FFF',
-              borderColor: '#FFF',
+              color:'#000',
+              borderColor: '#000',
             }]}
             placeholder={'Idade'}
-            placeholderTextColor={'#FFF'}
+            placeholderTextColor={'#000'}
             onChangeText={this.changeAge}
             
           />
@@ -155,11 +155,11 @@ export default class Form extends Component {
               letterSpacing: 2,
               borderRadius: 5,
               borderWidth: 1,
-              color:'#FFF',
-              borderColor: '#FFF',
+              color:'#000',
+              borderColor: '#000',
             }]}
             placeholder={'Responsável'}
-            placeholderTextColor={'#FFF'}
+            placeholderTextColor={'#000'}
             onChangeText={this.changeResponsible}
           />
         <Text style={[styles.text, {
@@ -192,7 +192,7 @@ export default class Form extends Component {
 
 const styles = StyleSheet.create({
   container:{
-    backgroundColor: '#1b212e',
+    backgroundColor: '#3DFFB7',
     alignItems: 'center',
     padding: 20,
     paddingTop: 40,
@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   selectInput:{
-    color: '#FFF',
+    color: '#000',
   },
   btnContinue:{
     borderRadius: 5,

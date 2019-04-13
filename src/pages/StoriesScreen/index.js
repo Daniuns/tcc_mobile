@@ -35,7 +35,6 @@ export default class StoriesScreen extends Component {
 
   render() {
     const {char, previewStory} = this.state;
-    console.log(previewStory);
     return (
       <View style={styles.container}>
          <Text style={[styles.text, {
@@ -91,7 +90,7 @@ export default class StoriesScreen extends Component {
                 Alert.alert('Modal has been closed.');
               }}
           >
-            <View style={styles.container}>
+            <View style={styles.containerModal}>
 
                 <View style={styles.imagesModal}>
                   <Image
@@ -133,7 +132,7 @@ export default class StoriesScreen extends Component {
                           textShadowOffset: {width: -1, height: -1},
                           textShadowRadius: 5,
                         }]}>
-                          Continuar
+                          Selecionar
                         </Text>
                       </TouchableOpacity>
                       <TouchableOpacity style={styles.btnCancel}onPress={this.closeModal}>
@@ -162,7 +161,6 @@ export default class StoriesScreen extends Component {
                       }]}
                     >
                       {char == 'pedrinho' ? previewStory.descriptionP : previewStory.descriptionA}
-                      Some TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome TextSome Text
                     </Text>
                 </View>
               </ScrollView>
@@ -176,6 +174,12 @@ export default class StoriesScreen extends Component {
 
 const styles = StyleSheet.create({
   container:{
+    width: '100%',
+    height: '100%',
+    padding: 10,
+    backgroundColor: '#3DFFB7',
+  },
+  containerModal:{
     width: '100%',
     height: '100%',
     padding: 10,
@@ -201,7 +205,7 @@ const styles = StyleSheet.create({
     width: 250,
     height: 270,
     backgroundColor: '#FCF6DE',
-    borderColor: '#ccc',
+    borderColor: '#000',
     marginTop: 20,
     alignSelf: 'center',
   },

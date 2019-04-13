@@ -8,8 +8,8 @@ import StoriesScreen from './pages/StoriesScreen/index';
 const MainNavigator = createStackNavigator({
   Form: { screen: Form },
   Character: {screen: Character},
-  GameScreen: {screen: GameScreen},
   StoriesScreen: {screen: StoriesScreen},
+  GameScreen: {screen: GameScreen},
   Main: {screen: Main},
 }, {
     headerMode: 'none',

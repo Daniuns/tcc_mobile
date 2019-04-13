@@ -79,7 +79,7 @@ export default class Character extends Component {
                 <ImageBackground
                   resizeMode='stretch'
                   style={styles.ImageBackground}
-                  source={require('../../imagens/aninha.jpeg')}
+                  source={require('../../imagens/aninha.png')}
                 >
                   <Text style={[styles.text, {
                     fontFamily: "KidsZone",
@@ -105,13 +105,15 @@ export default class Character extends Component {
         {previewCharacter ? 
           <Modal
               animationType="slide"
+              presentationStyle='fullScreen'
               transparent={false}
               visible={this.state.modalVisible}
               onRequestClose={() => {
                 Alert.alert('Modal has been closed.');
               }}
+              
           >
-              <View style={styles.container}>
+              <View style={styles.containerModal}>
                 <View style={styles.imagesModal}>
                     <Image
                     resizeMode='stretch'
@@ -157,7 +159,7 @@ export default class Character extends Component {
                             textShadowOffset: {width: -1, height: -1},
                             textShadowRadius: 5,
                           }]}>
-                          Continuar
+                          Selecionar
                         </Text>
                       </TouchableOpacity>
 
@@ -208,6 +210,13 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     padding: 10,
+    backgroundColor: '#3DFFB7',
+  },
+
+  containerModal:{
+    width: '100%',
+    height: '100%',
+    padding: 10,
     backgroundColor: '#1b212e',
   },
   characters:{
@@ -230,7 +239,7 @@ const styles = StyleSheet.create({
     width: 250,
     height: 270,
     backgroundColor: '#FCF6DE',
-    borderColor: '#ccc',
+    borderColor: '#000',
     marginTop: 20,
     alignSelf: 'center',
   },
