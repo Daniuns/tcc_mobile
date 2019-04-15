@@ -165,7 +165,7 @@ const stories = [
                             "volume": 0.9
                         },
                         {
-                            "audio": "on_the_car.mp3",
+                            "audio": "rain_on_the_car.mp3",
                             "repeat": true,
                             "volume": 0.9
                         }

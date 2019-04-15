@@ -118,7 +118,7 @@ export default class Character extends Component {
                     <Image
                     resizeMode='stretch'
                     style={styles.imageModal}
-                    source={previewCharacter == 'pedrinho' ? require("../../imagens/pedrinho.jpeg") : require("../../imagens/aninha.jpeg")}
+                    source={previewCharacter == 'pedrinho' ? require("../../imagens/pedrinho.jpeg") : require("../../imagens/aninha.png")}
                     />
                     <Image
                     resizeMode='stretch'

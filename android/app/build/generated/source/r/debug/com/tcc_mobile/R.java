@@ -2639,11 +2639,32 @@ public final class R {
     public static final int notification_tile_bg=0x7f06005f;
     public static final int notify_panel_notification_icon_bg=0x7f060060;
     public static final int src_imagens_aninha=0x7f060061;
-    public static final int src_imagens_bully=0x7f060062;
-    public static final int src_imagens_death=0x7f060063;
-    public static final int src_imagens_pedrinho=0x7f060064;
-    public static final int tooltip_frame_dark=0x7f060065;
-    public static final int tooltip_frame_light=0x7f060066;
+    public static final int src_imagens_at_the_school_a=0x7f060062;
+    public static final int src_imagens_at_the_school_p=0x7f060063;
+    public static final int src_imagens_bully_a=0x7f060064;
+    public static final int src_imagens_bully_p=0x7f060065;
+    public static final int src_imagens_calling_to_mom_a=0x7f060066;
+    public static final int src_imagens_calling_to_mom_p=0x7f060067;
+    public static final int src_imagens_death=0x7f060068;
+    public static final int src_imagens_dont_do_anything_a=0x7f060069;
+    public static final int src_imagens_dont_do_anything_p=0x7f06006a;
+    public static final int src_imagens_on_the_car_a=0x7f06006b;
+    public static final int src_imagens_on_the_car_p=0x7f06006c;
+    public static final int src_imagens_pedrinho=0x7f06006d;
+    public static final int src_imagens_play_button=0x7f06006e;
+    public static final int src_imagens_reproducing_button=0x7f06006f;
+    public static final int src_imagens_stay_at_home_a=0x7f060070;
+    public static final int src_imagens_stay_at_home_p=0x7f060071;
+    public static final int src_imagens_tell_to_mom_a=0x7f060072;
+    public static final int src_imagens_tell_to_mom_p=0x7f060073;
+    public static final int src_imagens_tell_to_teacher_a=0x7f060074;
+    public static final int src_imagens_tell_to_teacher_p=0x7f060075;
+    public static final int src_imagens_try_sick_a=0x7f060076;
+    public static final int src_imagens_try_sick_p=0x7f060077;
+    public static final int src_imagens_waking_up_a=0x7f060078;
+    public static final int src_imagens_waking_up_p=0x7f060079;
+    public static final int tooltip_frame_dark=0x7f06007a;
+    public static final int tooltip_frame_light=0x7f06007b;
   }
   public static final class id {
     public static final int ALT=0x7f070000;
@@ -2857,8 +2878,8 @@ public final class R {
     public static final int ic_launcher_round=0x7f0a0001;
   }
   public static final class raw {
-    public static final int at_school_a=0x7f0b0000;
-    public static final int at_the_classroom=0x7f0b0001;
+    public static final int at_the_classroom=0x7f0b0000;
+    public static final int at_the_school_a=0x7f0b0001;
     public static final int at_the_school_p=0x7f0b0002;
     public static final int calling_to_mom_a=0x7f0b0003;
     public static final int calling_to_mom_p=0x7f0b0004;

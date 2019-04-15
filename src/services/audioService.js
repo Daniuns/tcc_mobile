@@ -1,7 +1,10 @@
 import rxjs, { BehaviorSubject } from "rxjs";
 import Sound from 'react-native-sound';
-import {filter, of} from 'rxjs/operators'
+import {filter, of, take, combineAll, combineLatest} from 'rxjs/operators'
 import { bindComponent } from '../operators/bindComponent';
+import {DESCRIPTION_SCENE_AUDIOS, SCENE_AUDIOS} from '../../audios';
+import { storyService } from "./storyService";
+import { playerService } from "./playerService";
 
 Sound.setCategory('Playback');
 
@@ -14,7 +17,6 @@ export class AudioService {
     durationScene$ = new BehaviorSubject(undefined);
 
     setDurationDescription = (duration) => {
-        console.log('d', duration);
         this.durationScene$.next(duration);
     }
 
@@ -30,110 +32,61 @@ export class AudioService {
         return this.isAudioPlaying$.asObservable();
     }
 
-    setAudiosDescriptionScene = (a, character) => {
+    
+    playAudiosScene = (vertice) => {
+        const audio = vertice.midia.audiosScene.map(a => {
+            return SCENE_AUDIOS.find(scene_audio => scene_audio.name == a.audio)
+        })
 
-        const audio = character == 'pedrinho' ? a.audioP : a.audioA;
-
-        const newAudio = new Sound(audio, Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio');
-            }
-            if(a.repeat){
-                newAudio.setNumberOfLoops(a.repeat);
-            }
-
-            this.setDurationDescription(newAudio.getDuration());
-        });
-        this.descriptionScene$.next(newAudio);
-
-        this.playDescriptionScene();
-    }
-
-    playDescriptionScene = () => {
-        this.getDescriptionScene()
-            .subscribe(audio => {
-                setTimeout(() => {
-                    audio.setVolume(0.7).play(success => {
-                            if (success) {
-                                this.setIsAudioPlaying(false);                
-                                console.log('successfully finished');
-                              } else {
-                                console.log('playback failed due to audio decoding errors');
-                              }
-                        });
-                }, 500)
-            });
-    }
-
-
-    getDescriptionScene = () => {
-        return this.descriptionScene$.asObservable()
-    }
-
-
-    setAudiosScene = (audios) => {
-        console.log(audios)
-        const allAudios = [];
-            audios.map(a => {
-                const newAudio = new Sound(a.audio, Sound.MAIN_BUNDLE, (error) => {  
-                    
-                    if(error){
-                        console.log('error on load the audio');
+        audio.map(a => {
+            a.audio.setNumberOfLoops(2).play(success => {
+                if (success) {
+                    console.log('successfully finished playing');
+                    } else {
+                    console.log('Falhou para reproduzir som ambiente');
                     }
-                    if(a.repeat){
-                        newAudio.setNumberOfLoops(a.repeat);
+            })
+        })
+    }
+
+    stopAudiosScene = (vertice) => {
+        const audio = vertice.midia.audiosScene.map(a => {
+            return SCENE_AUDIOS.find(scene_audio => scene_audio.name == a.audio)
+        })
+
+        audio.map(a => {
+            a.audio.stop()
+        })
+    }
+
+
+
+    playDescriptionScene = (vertice, character) => {
+
+        if(character == 'pedrinho'){
+            const audio = DESCRIPTION_SCENE_AUDIOS.find(audio => audio.name == vertice.midia.descriptionScene.audioP)
+            this.setDurationDescription(audio.audio.getDuration());                    
+            audio.audio.play(success => {
+                if (success) {
+                    this.setIsAudioPlaying(false);                
+                    console.log('successfully finished playing');
+                    } else {
+                    console.log('Falhou para reproduzir som ambiente');
                     }
-
-                    newAudio.setVolume(a.volume);
-
-                });
-                allAudios.push(newAudio);
             })
-
-            this.audiosScene$.next(allAudios);
-
-            audioService.playAudiosScene()
-
-    }
-
-    playAudiosScene = () => {
-        this.getAudioScene()
-            .pipe(bindComponent(this))
-                .subscribe(audios => {
-                    console.log('audios', audios);
-                    audios.map(audio => {
-                        setTimeout(() => {
-                            console.log('aud', audio.getVolume());
-                            console.log('aud', audio);
-                        audio.setVolume(audio.getVolume()).play(success => {
-                                if (success) {
-                                    console.log('successfully finished playing');
-                                  } else {
-                                    console.log('playback failed due to audio decoding errors');
-                                  }
-                            });
-                    }, 500)
-                })
+        }
+        if(character == 'aninha'){
+            const audio = DESCRIPTION_SCENE_AUDIOS.find(audio => audio.name == vertice.midia.descriptionScene.audioA)
+            this.setDurationDescription(audio.audio.getDuration());                    
+            audio.audio.play(success => {
+                if (success) {
+                    this.setIsAudioPlaying(false);                
+                    console.log('successfully finished playing');
+                    } else {
+                    console.log('Falhou para reproduzir som ambiente');
+                    }
             })
-    }
-
-    stopActualAudiosScene = () => {
-        this.getAudioScene()
-            .pipe(bindComponent(this))
-                .subscribe(audios => {
-                audios.map(audio => {
-                        audio.stop();
-                })
-            })
-    }
-
-    getAudioScene = () => {
-        return this.audiosScene$.asObservable()
-    }
-
-    playAgain = () => {
-
+        }
     }
 }
 

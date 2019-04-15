@@ -34,8 +34,10 @@ export default class GameScreen extends Component {
                 this.setState({actualVertice});
 
                 if(actualVertice.midia.audiosScene.length > 0 && !!character){
-                    audioService.setAudiosScene(actualVertice.midia.audiosScene);
-                    audioService.setAudiosDescriptionScene(actualVertice.midia.descriptionScene, character);
+                    // audioService.setAudiosScene(actualVertice.midia.audiosScene);
+                    // audioService.setAudiosDescriptionScene(actualVertice.midia.descriptionScene, character);
+                    audioService.playDescriptionScene(actualVertice, character);
+                    audioService.playAudiosScene(actualVertice);
                 }
             });
 
@@ -67,7 +69,7 @@ export default class GameScreen extends Component {
         
         try{
             await relatoryService.sendRelatory();
-            audioService.stopActualAudiosScene();
+            audioService.stopAudiosScene(this.state.actualVertice);
             this.props.navigation.navigate('Main');
 
         }catch(err){
@@ -77,7 +79,7 @@ export default class GameScreen extends Component {
     }
 
     nextVertice = (aresta) => {
-        audioService.stopActualAudiosScene();
+        audioService.stopAudiosScene(this.state.actualVertice);
         audioService.setIsAudioPlaying(true);
 
         const {actualVertice, character, timeInit} = this.state;
@@ -95,7 +97,7 @@ export default class GameScreen extends Component {
     playAgain = () => {
         const {actualVertice, character} = this.state;
         audioService.setIsAudioPlaying(true);        
-        audioService.setAudiosDescriptionScene(actualVertice.midia.descriptionScene, character);
+        audioService.playDescriptionScene(actualVertice, character);
     }
 
     render(){
