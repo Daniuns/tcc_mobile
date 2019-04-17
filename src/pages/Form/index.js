@@ -92,7 +92,7 @@ export default class Form extends Component {
             textShadowOffset: {width: -1, height: -1},
             textShadowRadius: 5  
           }]}>
-            Sobre Você!
+            Sobre Você
           </Text>
       
         <View style={styles.formContent}>
