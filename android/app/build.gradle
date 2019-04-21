@@ -97,6 +97,11 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "com.tcc_mobile"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -148,6 +153,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-track-player')
     compile project(':react-native-sound')
     compile project(':react-native-sensor-manager')
     compile project(':react-native-gesture-handler')

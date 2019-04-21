@@ -4,177 +4,69 @@ Sound.setCategory('Playback');
 
 export const DESCRIPTION_SCENE_AUDIOS =[
     {
-        name: 'waking_up_p.mp3',
-        audio: new Sound('waking_up_p.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                        
-            if(error){
-                console.log('error on load the audio waking_up_p');
-            }
-
-        })
+         id: 'waking_up_p.mp3',
+         url: require('./android/app/src/main/res/raw/waking_up_p.mp3'),
     },
 
     {
-        name: 'waking_up_a.mp3',
-        audio: new Sound('waking_up_a.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio waking_up_a');
-            }
-
-        })
+         id: 'waking_up_a.mp3',
+         url: require('./android/app/src/main/res/raw/waking_up_a.mp3'),
     },
     {
-        name: 'on_the_car_p.mp3',
-        audio: new Sound('on_the_car_p.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio on_the_car_p');
-            }
-
-        })
+         id: 'on_the_car_p.mp3',
+         url: require('./android/app/src/main/res/raw/on_the_car_p.mp3'),
     },{
-        name: 'on_the_car_a.mp3',
-        audio: new Sound('on_the_car_a.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio on_the_car_a');
-            }
-
-        })
+         id: 'on_the_car_a.mp3',
+         url: require('./android/app/src/main/res/raw/on_the_car_a.mp3'),
     },{
-        name: 'try_sick_p.mp3',
-        audio: new Sound('try_sick_p.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio try_sick_p');
-            }
-
-        })
+         id: 'try_sick_p.mp3',
+         url: require('./android/app/src/main/res/raw/try_sick_p.mp3'),
     },{
-        name: 'try_sick_a.mp3',
-        audio: new Sound('try_sick_a.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio try_sick_a');
-            }
-
-        })
+         id: 'try_sick_a.mp3',
+         url: require('./android/app/src/main/res/raw/try_sick_a.mp3'),
     },{
-        name: 'tell_mom_p.mp3',
-        audio: new Sound('tell_mom_p.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio tell_mom_p');
-            }
-
-        })
+         id: 'tell_mom_p.mp3',
+         url: require('./android/app/src/main/res/raw/tell_mom_p.mp3'),
     },{
-        name: 'tell_mom_a.mp3',
-        audio: new Sound('tell_mom_a.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio tell_mom_a');
-            }
-
-        })
+         id: 'tell_mom_a.mp3',
+         url: require('./android/app/src/main/res/raw/tell_mom_a.mp3'),
     },{
-        name: 'at_the_school_p.mp3',
-        audio: new Sound('at_the_school_p.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio at_the_school_p');
-            }
-
-        })
+         id: 'at_the_school_p.mp3',
+         url: require('./android/app/src/main/res/raw/at_the_school_p.mp3'),
     },{
-        name: 'at_the_school_a.mp3',
-        audio: new Sound('at_the_school_a.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio at_the_school_a');
-            }
-
-        })
+         id: 'at_the_school_a.mp3',
+         url: require('./android/app/src/main/res/raw/at_the_school_a.mp3'),
     },
     {
-        name: 'stay_home_p.mp3',
-        audio: new Sound('stay_home_p.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio stay_home_p');
-            }
-
-        })
+         id: 'stay_home_p.mp3',
+         url: require('./android/app/src/main/res/raw/stay_home_p.mp3'),
     },
     {
-        name: 'stay_home_a.mp3',
-        audio: new Sound('stay_home_a.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio stay_home_a');
-            }
-
-        })
+         id: 'stay_home_a.mp3',
+         url: require('./android/app/src/main/res/raw/stay_home_a.mp3'),
     },
     {
-        name: 'tell_teacher_p.mp3',
-        audio: new Sound('tell_teacher_p.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio tell_teacher_p');
-            }
-
-        })
+         id: 'tell_teacher_p.mp3',
+         url: require('./android/app/src/main/res/raw/tell_teacher_p.mp3'),
     },
     {
-        name: 'tell_teacher_a.mp3',
-        audio: new Sound('tell_teacher_a.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio tell_teacher_a');
-            }
-
-        })
+         id: 'tell_teacher_a.mp3',
+         url: require('./android/app/src/main/res/raw/tell_teacher_a.mp3'),
     },
     {
-        name: 'calling_to_mom_p.mp3',
-        audio: new Sound('calling_to_mom_p.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio calling_to_mom_p');
-            }
-
-        })
+         id: 'calling_to_mom_p.mp3',
+         url: require('./android/app/src/main/res/raw/calling_to_mom_p.mp3'),
     },{
-        name: 'calling_to_mom_a.mp3',
-        audio: new Sound('calling_to_mom_a.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio calling_to_mom_a');
-            }
-
-        })
+         id: 'calling_to_mom_a.mp3',
+         url: require('./android/app/src/main/res/raw/calling_to_mom_a.mp3'),
     },
     {
-        name: 'dont_do_anything_p.mp3',
-        audio: new Sound('dont_do_anything_p.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio dont_do_anything_p');
-            }
-
-        })
+         id: 'dont_do_anything_p.mp3',
+         url: require('./android/app/src/main/res/raw/dont_do_anything_p.mp3'),
     },
     {
-        name: 'dont_do_anything_a.mp3',
-        audio: new Sound('dont_do_anything_a.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio dont_do_anything_a');
-            }
-
-        })
+         id: 'dont_do_anything_a.mp3',
+         url: require('./android/app/src/main/res/raw/dont_do_anything_a.mp3'),
     }
 ]
 
@@ -182,73 +74,31 @@ export const DESCRIPTION_SCENE_AUDIOS =[
 
 export const SCENE_AUDIOS = [
     {
-        name: 'rain.mp3',
-        audio: new Sound('rain.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio rain.mp3');
-            }
-
-        })
+         id: 'rain.mp3',
+         url: require('./android/app/src/main/res/raw/rain.mp3'),
     },
     {
-        name: 'thunder.mp3',
-        audio: new Sound('thunder.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio thunder.mp3');
-            }
-
-        })
+         id: 'thunder.mp3',
+         url: require('./android/app/src/main/res/raw/thunder.mp3'),
     },
     {
-        name: 'on_the_car_suburban.mp3',
-        audio: new Sound('on_the_car_suburban.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio on_the_car_suburban.mp3');
-            }
-
-        })
+         id: 'on_the_car_suburban.mp3',
+         url: require('./android/app/src/main/res/raw/on_the_car_suburban.mp3'),
     },
     {
-        name: 'rain_on_the_car.mp3',
-        audio: new Sound('rain_on_the_car.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio rain_on_the_car.mp3');
-            }
-
-        })
+         id: 'rain_on_the_car.mp3',
+         url: require('./android/app/src/main/res/raw/rain_on_the_car.mp3'),
     },
     {
-        name: 'rain_on_roof.mp3',
-        audio: new Sound('rain_on_roof.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio rain_on_roof.mp3');
-            }
-
-        })
+         id: 'rain_on_roof.mp3',
+         url: require('./android/app/src/main/res/raw/rain_on_roof.mp3'),
     },
     {
-        name: 'at_the_classroom.mp3',
-        audio: new Sound('at_the_classroom.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio at_the_classroom.mp3');
-            }
-
-        })
+         id: 'at_the_classroom.mp3',
+         url: require('./android/app/src/main/res/raw/at_the_classroom.mp3'),
     },
     {
-        name: 'phone_ringing.mp3',
-        audio: new Sound('phone_ringing.mp3', Sound.MAIN_BUNDLE, (error) => {  
-                    
-            if(error){
-                console.log('error on load the audio phone_ringing.mp3');
-            }
-
-        })
+         id: 'phone_ringing.mp3',
+         url: require('./android/app/src/main/res/raw/phone_ringing.mp3'),
     }
 ]
