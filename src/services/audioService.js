@@ -93,7 +93,6 @@ export class AudioService {
                 TrackPlayer.play().then(async () => {
                     try{
                         TrackPlayer.getDuration().then(d => {
-                            console.log('d de duration', d);
                             this.setDurationDescription(d);
                         })
                         console.log('sucess');
@@ -109,6 +108,9 @@ export class AudioService {
             TrackPlayer.add([track]).then(() => {
                 TrackPlayer.play().then(async () => {
                     try{
+                        TrackPlayer.getDuration().then(d => {
+                            this.setDurationDescription(d);
+                        })
                         console.log('sucess');
                     }catch(err){
                         console.log(err);
