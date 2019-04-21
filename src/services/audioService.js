@@ -7,11 +7,10 @@ import { storyService } from "./storyService";
 import { playerService } from "./playerService";
 
 import TrackPlayer  from 'react-native-track-player';
+
 TrackPlayer.setupPlayer().then(async () => {
 });
 
-// TrackPlayer.add(DESCRIPTION_SCENE_AUDIOS);
-// TrackPlayer.play();
 Sound.setCategory('Playback');
 
 
@@ -87,14 +86,16 @@ export class AudioService {
 
     playDescriptionScene = (vertice, character) => {
 
-        TrackPlayer.getQueue().then(q => console.log('queuee', q));
-        
         if(character == 'pedrinho'){
             const track = DESCRIPTION_SCENE_AUDIOS.find(audio => audio.id == vertice.midia.descriptionScene.audioP);
 
             TrackPlayer.add([track]).then(() => {
                 TrackPlayer.play().then(async () => {
                     try{
+                        TrackPlayer.getDuration().then(d => {
+                            console.log('d de duration', d);
+                            this.setDurationDescription(d);
+                        })
                         console.log('sucess');
                     }catch(err){
                         console.log(err);

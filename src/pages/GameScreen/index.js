@@ -34,7 +34,7 @@ export default class GameScreen extends Component {
                 this.setState({actualVertice});
 
                 if(actualVertice.midia.audiosScene.length > 0 && !!character){
-                    console.log('trocou de vértice')
+                    audioService.playAudiosScene(actualVertice);
                     audioService.playDescriptionScene(actualVertice, character);
                 }
             });
@@ -44,7 +44,6 @@ export default class GameScreen extends Component {
                     if(state == 1){
                         audioService.setIsAudioPlaying(false);
                     }
-                    console.log('sttte',state);
                 })
 
             audioService.isAudioPlaying()
@@ -76,7 +75,7 @@ export default class GameScreen extends Component {
         try{
             await relatoryService.sendRelatory();
             audioService.destroy();
-            // audioService.stopAudiosScene(this.state.actualVertice);
+            audioService.stopAudiosScene(this.state.actualVertice);
             this.props.navigation.navigate('Main');
 
         }catch(err){
@@ -86,10 +85,11 @@ export default class GameScreen extends Component {
     }
 
     nextVertice = (aresta) => {
+        const {actualVertice, character, timeInit} = this.state;
         audioService.setIsAudioPlaying(true);
         audioService.changeTrack();
+        audioService.stopAudiosScene(actualVertice);
 
-        const {actualVertice, character, timeInit} = this.state;
         
         Vibration.vibrate(300);
         const data = {

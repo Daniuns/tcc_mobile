@@ -17,6 +17,7 @@ export class RelatoryService {
             take(1), 
             bindComponent(this)
         ).subscribe(relatory => {
+            console.log(data);
             this.relatory$.next([...relatory, data ])
         })
     }

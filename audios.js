@@ -73,32 +73,74 @@ export const DESCRIPTION_SCENE_AUDIOS =[
 // AUDIOS DAS CENAS
 
 export const SCENE_AUDIOS = [
-    {
-         id: 'rain.mp3',
-         url: require('./android/app/src/main/res/raw/rain.mp3'),
-    },
-    {
-         id: 'thunder.mp3',
-         url: require('./android/app/src/main/res/raw/thunder.mp3'),
-    },
-    {
-         id: 'on_the_car_suburban.mp3',
-         url: require('./android/app/src/main/res/raw/on_the_car_suburban.mp3'),
-    },
-    {
-         id: 'rain_on_the_car.mp3',
-         url: require('./android/app/src/main/res/raw/rain_on_the_car.mp3'),
-    },
-    {
-         id: 'rain_on_roof.mp3',
-         url: require('./android/app/src/main/res/raw/rain_on_roof.mp3'),
-    },
-    {
-         id: 'at_the_classroom.mp3',
-         url: require('./android/app/src/main/res/raw/at_the_classroom.mp3'),
-    },
-    {
-         id: 'phone_ringing.mp3',
-         url: require('./android/app/src/main/res/raw/phone_ringing.mp3'),
-    }
+     {
+         name: 'rain.mp3',
+         audio: new Sound('rain.mp3', Sound.MAIN_BUNDLE, (error) => {  
+                     
+             if(error){
+                 console.log('error on load the audio rain.mp3');
+             }
+ 
+         })
+     },
+     {
+         name: 'thunder.mp3',
+         audio: new Sound('thunder.mp3', Sound.MAIN_BUNDLE, (error) => {  
+                     
+             if(error){
+                 console.log('error on load the audio thunder.mp3');
+             }
+ 
+         })
+     },
+     {
+         name: 'on_the_car_suburban.mp3',
+         audio: new Sound('on_the_car_suburban.mp3', Sound.MAIN_BUNDLE, (error) => {  
+                     
+             if(error){
+                 console.log('error on load the audio on_the_car_suburban.mp3');
+             }
+ 
+         })
+     },
+     {
+         name: 'rain_on_the_car.mp3',
+         audio: new Sound('rain_on_the_car.mp3', Sound.MAIN_BUNDLE, (error) => {  
+                     
+             if(error){
+                 console.log('error on load the audio rain_on_the_car.mp3');
+             }
+ 
+         })
+     },
+     {
+         name: 'rain_on_roof.mp3',
+         audio: new Sound('rain_on_roof.mp3', Sound.MAIN_BUNDLE, (error) => {  
+                     
+             if(error){
+                 console.log('error on load the audio rain_on_roof.mp3');
+             }
+ 
+         })
+     },
+     {
+         name: 'at_the_classroom.mp3',
+         audio: new Sound('at_the_classroom.mp3', Sound.MAIN_BUNDLE, (error) => {  
+                     
+             if(error){
+                 console.log('error on load the audio at_the_classroom.mp3');
+             }
+ 
+         })
+     },
+     {
+         name: 'phone_ringing.mp3',
+         audio: new Sound('phone_ringing.mp3', Sound.MAIN_BUNDLE, (error) => {  
+                     
+             if(error){
+                 console.log('error on load the audio phone_ringing.mp3');
+             }
+ 
+         })
+     }
 ]
